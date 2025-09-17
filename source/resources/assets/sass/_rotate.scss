@@ -1,0 +1,24 @@
+.rotate {
+	transition: all ease-in-out 275ms;
+	transform-origin: 50% 50%;
+
+	&.rotate-0 {	
+		transform: rotate(0deg);
+	}
+
+	&.rotate-180 {
+		transform: rotate(180deg);
+	}
+
+	&.rotate-180r {
+		transform: rotate(-180deg);
+	}
+
+	&.rotate-90 {
+		transform: rotate(90deg);
+	}
+
+	&.rotate-90r {
+		transform: rotate(-90deg);
+	}
+}

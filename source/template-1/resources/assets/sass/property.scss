@@ -1,0 +1,1112 @@
+@import "variables";
+@import "read-more";
+
+.site-content {
+	padding-top: 0;
+}
+
+._banner {
+	position: relative;
+	margin-bottom: 10px;
+	display: block;
+
+	.banner-item-container {
+		cursor: pointer;
+	}
+}
+
+._property-image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(43,43,43,.35);
+	pointer-events: none;
+	transition: opacity ease 0.3s;
+	opacity: 1;
+
+	display: none;
+	@media (min-width: 992px) {
+		display: block;
+	}
+
+	._property-image-overlay-content {
+		position: absolute;
+		height: 130px;
+		top: calc(50% - 65px);
+		width: 100%;
+
+		text-align: center;
+		._property-image-overlay-image {
+			> img {
+				height: 100px;
+				width: 100px;
+				display: inline-block
+			}
+		}
+
+		._property-image-overlay-text {
+			font-size: 18px;
+			font-weight: 700;
+			color: $light;
+		}
+	}
+}
+
+#_property-images-scrolling-container {
+	// $max-width: 260px;
+	$max-height: 185px;
+
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-height: $max-height;
+	background-color: transparent;
+
+	display: none;
+	@media (min-width: 992px) {
+		display: block;
+	}
+
+	#_property-images-scrolling-features {
+		position: relative;
+		display: inline-block;
+		padding-left: 0;
+		padding-bottom: 0;
+		width: 10000px;
+		margin-bottom: 0;
+
+		li {
+			position: relative;
+			display: inline-block;
+			margin-right: 2px;
+			height: $max-height;
+			// width: $max-width;
+			overflow: hidden;
+			margin-bottom: -5px;
+
+			a {
+				display: inline;
+				text-transform: capitalize;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			&:hover {
+				._property-image-overlay {
+					opacity: 0;
+				}
+			}
+		}
+
+		img {
+			&.img-responsive {
+				height: 100%;
+				width: auto;
+				max-width: none;
+			}
+		}
+	}
+
+	.carousel-control {
+		$height: 100%;
+
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		height: $height;
+		width: auto;
+		font-size: 3rem;
+		opacity: 1;
+
+		> .banner-control-background {
+			height: $height;
+			padding-top: 70px;
+			padding-left: 10px;
+			padding-right: 10px;
+			background-color: transparent;
+		}
+
+		i.fa {
+			color: #fff;
+		}
+	}
+}
+
+#property-image {
+	position: relative;
+}
+
+._villas-365-property-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+	display: none;
+	@media (min-width: 992px) {
+		display: block;
+	}
+
+	._villas-365-property-header-inner {
+		height: 100%;
+		width: 100%;
+		background-color: rgba(255,255,255,0.4);
+		padding: 15px;
+		pointer-events: all;
+
+		._villas-365-property-header-inner-background {
+			background-color: rgba(255,255,255,0.95);
+			padding: 30px;
+			position: relative;
+
+			._villas-365-property-name {
+				color: $primary;
+				text-transform: uppercase;
+			}
+
+			._villas-365-property-button {
+				pointer-events: all;
+				padding-left: 1.75rem;
+				padding-right: 1.75rem;
+			}
+
+			#_villas-365-property-header-close-button {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				height: 25px;
+				width: 25px;
+				font-size: 16px;
+				text-align: center;
+				cursor: pointer;
+			}
+		}
+	}
+
+	> .container {
+		height: 100%;
+
+		> .row {
+			height: 100%;
+		}
+	}
+}
+
+h4._villas-365-property-description-title,
+h4._villas-365-property-information-title {
+}
+
+._villas-365-property-information {
+	position: relative;
+
+	._villas-365-property-information-controls {
+		._villas-365-property-information-control {
+			cursor: pointer;
+			text-transform: uppercase;
+			padding-left: 15px;
+			padding-right: 15px;
+			border-right: 1px solid $senary;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				border-right: none;
+			}
+
+			color: $septenary;
+			&.active,
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	._villas-365-property-information-items {
+		position: relative;
+		background-color: $senary;
+		min-height: 450px;
+		transition: all ease-in-out 400ms;
+
+		._villas-365-property-information-item {
+			min-height: 450px;
+			transition: all ease-in-out 400ms;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			opacity: 0;
+			&.active {
+				position: relative;
+				opacity: 1;
+				z-index: 10000;
+			}
+		}
+
+		#_villas-365-property-map-frame {
+			display: block;
+		}
+
+		._villas-365-map-container {
+			min-height: 450px;
+			height: 100%;
+		}
+	}
+}
+
+._villas-365-property-amenities {
+	position: relative;
+	background-color: $secondary;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	overflow: visible;
+
+	h3 {
+		color: $primary;
+	}
+
+	._villas-365-property-amenity-switcher {
+		position: relative;
+
+		._villas-365-property-amenity-switcher-item-selected {
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		._villas-365-property-amenity-switcher-items {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			padding: 5px 10px;
+			border-radius: 0;
+			border: 5px solid #efefef;
+			background-color: #fff;
+			box-shadow: 0 0 10px 0 rgba(97, 97, 97, 0.6);
+			z-index: 10000;
+			
+			._villas-365-property-amenity-switcher-item {
+				cursor: pointer;
+				font-size: 16px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+			}
+		}
+	}
+
+	._villas-365-property-amenity-switcher-inline {
+		position: relative;
+
+		._villas-365-property-amenity-switcher-inline-items {			
+			._villas-365-property-amenity-switcher-inline-item {
+				position: relative;
+				cursor: pointer;
+				font-size: 16px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				padding-left: 8px;
+				padding-right: 8px;
+				margin-left: -8px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				i {
+					display: none;
+				}
+
+				._villas-365-property-amenity-switcher-inline-item-background {
+					display: none;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+					background-color: $primary;
+					opacity: 0.15;
+				}
+
+				&.active {
+					font-weight: 700;
+					color: $primary;
+
+					i {
+						display: inline-block;
+					}
+
+					._villas-365-property-amenity-switcher-inline-item-background {
+						display: block;
+					}
+
+					> span {
+						z-index: 100;
+					}
+				}
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	._villas-365-property-amenities-container {
+		position: relative;
+
+		._villas-365-property-amenity-group {
+			position: absolute;
+			top: 0;
+			left: 15px;
+			width: calc(100% - 30px);
+
+			&.active {
+				position: relative;
+				left: 0;
+				width: 100%;
+			}
+
+			._villas-365-property-amenity {
+				text-align: center;
+				display: block;
+				align-items: center;
+
+				._villas-365-property-amenity-icon {
+					font-size: 24px;
+				}
+
+				._villas-365-property-amenity-name {
+					font-size: 14px;
+				}
+				
+				@media (min-width: 992px) {
+					text-align: left;
+					display: flex;
+					align-items: center;
+
+					._villas-365-property-amenity-icon {
+						display: inline-block;
+					}
+
+					._villas-365-property-amenity-name {
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+}
+
+._villas-365-property-rates-table {
+	._villas-365-property-rates-table-header {
+		color: $tertiary;
+		padding: 5px 10px;
+		font-weight: 700;
+		font-size: 14px;
+
+		@media (min-width: 992px) {
+			font-size: 22px;
+		}
+	}
+
+	._villas-365-property-rates-table-item {
+		._villas-365-property-rates-table-item-inner {
+			padding: 5px 10px;
+			background-color: #efefef;
+			
+			&._villas-365-property-rates-table-item-inner-alt {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+._villas-365-property-reviews {
+	background-color: $secondary;
+	padding: 60px;
+}
+
+._villas-365-properties {
+	._villas-365-property-rooms {
+		margin-bottom: 0;
+	}
+}
+
+._villas-365-property-image-virtual-tour {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-height: 230px;
+	overflow: hidden;
+
+	img {
+		max-width: inherit;
+		height: 100%;
+	}
+
+	._property-image-overlay {
+		display: block;
+	}
+}
+
+._villas-365-property-related-container {
+	background-color: $quaternary;
+
+	._villas-365-property {
+		background-color: #fbfbfb !important;
+
+		._villas-365-property-inner {
+			background-color: #fbfbfb !important;
+			padding: 0 !important;
+		}
+
+		&:hover {
+			background-color: $light !important;
+
+			._villas-365-property-inner {
+				background-color: $light !important;
+			}
+		}
+	}
+}
+
+#_villas-365-property-floater-anchor {
+	height: 0;
+	width: 100%;
+	position: relative;
+}
+#_villas-365-property-floater {
+	height: 0;
+	width: 100%;
+	overflow: visible;
+	pointer-events: none;
+	z-index: 100000;
+	position: relative;
+	top: -30px;
+
+	&.float {
+		position: fixed;
+	}
+
+	._villas-365-property-floater-content {
+		width: 100%;
+		background-color: $light;
+		pointer-events: all;
+		box-shadow: 0 0 10px 0 rgba(40,40,40,0.3);
+
+		._villas-365-property-floater-header {
+			color: $light;
+			background-color: $primary;
+			width: 100%;
+			padding: 20px;
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		._villas-365-property-floater-body {
+			width: 100%;
+			padding: 25px;
+
+			hr {
+				margin-top: 0.5rem;
+			}
+
+			label,
+			#_villas-365-property-floater-total-label,
+			#_villas-365-property-floater-total {
+				font-weight: 700;
+			}
+
+			#_villas-365-property-floater-price-details-button {
+				cursor: pointer;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-weight: 700;
+				color: $primary;
+			
+				.button-icon {
+					padding-left: 5px;
+				}
+			
+				.hide-on-show {
+					display: none;
+				}
+				
+				.show-on-show {
+					display: inline-block;
+				}
+			
+				&.collapsed {
+					.hide-on-show {
+						display: inline-block;
+					}
+			
+					.show-on-show {
+						display: none;
+					}
+				}
+			}
+			
+			._villas-365-property-floater-price-details-container {
+				font-size: 14px;
+			}
+
+			._villas-365-property-floater-price-details {
+				text-align: right;
+			}
+
+			#_villas-365-property-floater-total {
+				text-align: right;
+			}
+
+			#_villas-365-property-floater-total-row {
+				min-height: 23px;
+			}
+
+			#_villas-365-property-floater-price-per-night {
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+			#_villas-365-property-floater-minimum-nights-container {
+				font-size: 12px;
+				text-align: center;
+			}
+
+			._villas-365-checkin {
+				border-right: none;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+			}
+
+			._villas-365-checkout {
+				border-left: none;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+			}
+
+			.chosen-container {
+				&.chosen-container-single {
+					.chosen-single {
+						border: 1px solid $senary;
+						border-radius: 0.25rem;
+					}
+
+					.chosen-drop {
+						border-color: $senary;
+						border-radius: 0 0 0.25rem 0.25rem;
+						margin-top: -1px;
+					}
+				}
+
+				&.chosen-container-active.chosen-with-drop {
+					.chosen-single {
+						border-radius: 0.25rem 0.25rem 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+._villas-365-property-amenity-icon {
+	background-image: url(../img/amenities-icons.png);
+	background-repeat: no-repeat;
+	background-position-x : center;
+	width: 52px;
+	height: 34px;
+	display: inline-block;
+  
+	&.amenity-air-conditioned {
+		background-position-y: -162px;
+	} 
+
+	&.amenity-central-heating {
+		background-position-y: -562px;
+	} 
+
+	&.amenity-child-friendly {
+		background-position-y: -42px;
+	} 
+
+	&.amenity-dedicated-parking-space {
+		background-position-y: -122px;
+	} 
+
+	&.amenity-high-ceilings {
+		background-position-y: -442px;
+	} 
+
+	&.amenity-mountain-view {
+		background-position-y: -402px;
+	} 
+
+	&.amenity-ocean-view {
+		background-position-y: -2px;
+	} 
+
+	&.amenity-off-street-parking {
+		background-position-y: -522px;
+	} 
+
+	&.amenity-on-the-ocean {
+		background-position-y: -362px;
+	} 
+
+	&.amenity-spacious {
+		background-position-y: -82px;
+	} 
+
+	&.amenity-wheel-chair-access {
+		background-position-y: -482px;
+	} 
+
+	&.amenity-bath {
+		background-position-y: -802px;
+	} 
+
+	&.amenity-bath-shower {
+		background-position-y: -842px;
+	} 
+
+	&.amenity-hair-dryer {
+		background-position-y: -1002px;
+	} 
+
+	&.amenity-shower {
+		background-position-y: -882px;
+	} 
+
+	&.amenity-toilet {
+		background-position-y: -922px;
+	} 
+
+	&.amenity-towels-inc {
+		background-position-y: -962px;
+	} 
+
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	} 
+
+	&.amenity-alarm-clock {
+		background-position-y: -762px;
+	} 
+
+	&.amenity-ceiling-fan {
+		background-position-y: -322px;
+	} 
+
+	&.amenity-en-suite {
+		background-position-y: -642px;
+	} 
+
+	&.amenity-fan {
+		background-position-y: -722px;
+	} 
+
+	&.amenity-king {
+		background-position-y: -682px;
+	} 
+
+	&.amenity-linen-inc {
+		background-position-y: -282px;
+	} 
+
+	&.amenity-queen {
+		background-position-y: -202px;
+	} 
+
+	&.amenity-sleeps {
+		background-position-y: -602px;
+	}
+
+	&.amenity-double {
+		background-position-y: -3722px;
+	}
+
+	&.amenity-twin {
+		background-position-y: -242px;
+	} 
+
+	&.amenity-hot-tub {
+		background-position-y: -2842px;
+	} 
+
+	&.amenity-whirlpool {
+		background-position-y: -2882px;
+	} 
+
+	&.amenity-seats {
+		background-position-y: -1042px;
+	} 
+
+	&.amenity-seats-indoors {
+		background-position-y: -1082px;
+	} 
+
+	&.amenity-seats-outdoors {
+		background-position-y: -1122px;
+	} 
+
+	&.amenity-ceiling-fan {
+		background-position-y: -322px;
+	} 
+
+	&.amenity-coffee-maker {
+		background-position-y: -1402px;
+	} 
+
+	&.amenity-cooking-utensils {
+		background-position-y: -1482px;
+	} 
+
+	&.amenity-dishes-utensils {
+		background-position-y: -1442px;
+	} 
+
+	&.amenity-dishwasher {
+		background-position-y: -1362px;
+	} 
+
+	&.amenity-fan {
+		background-position-y: -722px;
+	} 
+
+	&.amenity-freezer {
+		background-position-y: -1202px;
+	} 
+
+	&.amenity-full-modernized {
+		background-position-y: -1562px;
+	} 
+
+	&.amenity-ice-maker {
+		background-position-y: -1242px;
+	} 
+
+	&.amenity-microwave {
+		background-position-y: -1322px;
+	} 
+
+	&.amenity-oven {
+		background-position-y: -1282px;
+	} 
+
+	&.amenity-patnry-items {
+		background-position-y: -1522px;
+	} 
+
+	&.amenity-refridgerator {
+		background-position-y: -1162px;
+	} 
+
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	} 
+
+	&.amenity-ceiling-fan {
+		background-position-y: -722px;
+	} 
+
+	&.amenity-chair {
+		background-position-y: -1642px;
+	} 
+
+	&.amenity-fan {
+		background-position-y: -322px;
+	} 
+
+	&.amenity-high-ceiling {
+		background-position-y: -442px;
+	} 
+
+	&.amenity-seats {
+		background-position-y: -1042px;
+	} 
+
+	&.amenity-sofa {
+		background-position-y: -1602px;
+	} 
+
+	&.amenity-spacious {
+		background-position-y: -82px;
+	} 
+
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	} 
+
+	&.amenity-barbecue {
+		background-position-y: -1682px;
+	} 
+
+	&.amenity-beach-equipment {
+		background-position-y: -2402px;
+	} 
+
+	&.amenity-beach-towels {
+		background-position-y: -2362px;
+	} 
+
+	&.amenity-books {
+		background-position-y: -2682px;
+	} 
+
+	&.amenity-broadband {
+		background-position-y: -2082px;
+	} 
+
+	&.amenity-cable {
+		background-position-y: -1882px;
+	} 
+
+	&.amenity-central-heating {
+		background-position-y: -562px;
+	} 
+
+	&.amenity-deck {
+		background-position-y: -1802px;
+	} 
+
+	&.amenity-dryer {
+		background-position-y: -2562px;
+	} 
+
+	&.amenity-dvd {
+		background-position-y: -1962px;
+	} 
+
+	&.amenity-dvds {
+		background-position-y: -2762px;
+	} 
+
+	&.amenity-fireplace {
+		background-position-y: -2442px;
+	} 
+
+	&.amenity-free-phone-service {
+		background-position-y: -2042px;
+	} 
+
+	&.amenity-gas-grill {
+		background-position-y: -1722px;
+	} 
+
+	&.amenity-iron-board {
+		background-position-y: -2642px;
+	} 
+
+	&.amenity-jacuzzi {
+		background-position-y: -2202px;
+	} 
+
+	&.amenity-lawn-garden {
+		background-position-y: -2322px;
+	} 
+
+	&.amenity-patio {
+		background-position-y: -1802px;
+	} 
+
+	&.amenity-pool {
+		background-position-y: -2162px;
+	} 
+
+	&.amenity-radio {
+		background-position-y: -2802px;
+	} 
+
+	&.amenity-sauna {
+		background-position-y: -2242px;
+	} 
+
+	&.amenity-stereo {
+		background-position-y: -2002px;
+	} 
+
+	&.amenity-tennis-court {
+		background-position-y: -2282px;
+	} 
+
+	&.amenity-tv {
+		background-position-y: -1842px;
+	} 
+
+	&.amenity-vcr {
+		background-position-y: -1922px;
+	} 
+
+	&.amenity-veranda {
+		background-position-y: -1762px;
+	} 
+
+	&.amenity-videos {
+		background-position-y: -2722px;
+	} 
+
+	&.amenity-washer {
+		background-position-y: -2522px;
+	} 
+
+	&.amenity-washer-dryer {
+		background-position-y: -2602px;
+	} 
+
+	&.amenity-wheel-chair-access {
+		background-position-y: -482px;
+	} 
+
+	&.amenity-wifi {
+		background-position-y: -2122px;
+	} 
+
+	&.amenity-woodstove {
+		background-position-y: -2482px;
+	} 
+
+	&.amenity-boating {
+		background-position-y: -2922px;
+	} 
+
+	&.amenity-cinema {
+		background-position-y: -3562px;
+	} 
+
+	&.amenity-golf {
+		background-position-y: -2962px;
+	} 
+
+	&.amenity-horseback-riding {
+		background-position-y: -3002px;
+	} 
+
+	&.amenity-mall {
+		background-position-y: -3602px;
+	} 
+
+	&.amenity-mountain-climbing {
+		background-position-y: -3162px;
+	} 
+
+	&.amenity-nature {
+		background-position-y: -3642px;
+	} 
+
+	&.amenity-off-roading {
+		background-position-y: -3202px;
+	} 
+
+	&.amenity-post-offie {
+		background-position-y: -3522px;
+	} 
+
+	&.amenity-rain-forest {
+		background-position-y: -3242px;
+	} 
+
+	&.amenity-restaurants {
+		background-position-y: -3442px;
+	} 
+
+	&.amenity-shops {
+		background-position-y: -3482px;
+	} 
+
+	&.amenity-site-seeing {
+		background-position-y: -3282px;
+	} 
+
+	&.amenity-skiing {
+		background-position-y: -3762px;
+	}
+
+	&.amenity-snorkel-scuba {
+		background-position-y: -3042px;
+	} 
+
+	&.amenity-surfing {
+		background-position-y: -3082px;
+	} 
+
+	&.amenity-tennis {
+		background-position-y: -2282px;
+	} 
+
+	&.amenity-volcano {
+		background-position-y: -3322px;
+	} 
+
+	&.amenity-walking {
+		background-position-y: -3362px;
+	} 
+
+	&.amenity-water-sports {
+		background-position-y: -3122px;
+	} 
+
+	&.amenity-woodland {
+		background-position-y: -3402px;
+	}
+
+	&.amenity-safe-box {
+		background-position-y: -3682px;
+	}
+
+	&.amenity-single-bed {
+		background-position-y: -3802px;
+	}
+
+	&.amenity-balcony {
+		background-position-y: -3842px;
+	}
+
+	.swimming-pool {
+		background-position-y: -3882px;
+	}
+
+	&.amenity-separate-kitchen {
+		background-position-y: -3922px;
+	}
+
+	&.amenity-heated-pool {
+		background-position-y: -3962px;
+	}
+
+	&.amenity-elevator {
+		background-position-y: -4002px;
+	}
+
+	&.amenity-double-sofa-bed {
+		background-position-y: -4042px;
+	}
+
+	&.amenity-beach-front {
+		background-position-y: -4082px;
+	}
+}
+
+.fancybox-container {
+	z-index: 120000;
+}

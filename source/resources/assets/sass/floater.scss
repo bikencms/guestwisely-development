@@ -1,0 +1,110 @@
+@import "variables";
+@import "rotate";
+@import "quote-widget";
+@import "quote-widget-modal";
+
+#_villas-365-property-floater-anchor {
+	height: 0;
+	width: 100%;
+	position: relative;
+}
+
+#_villas-365-property-floater {
+	position: fixed;
+	overflow: auto;
+	pointer-events: all;
+	z-index: 99990;
+	top: 0px;
+	height: 100vh;
+	min-height: 800px;
+	width: 100%;
+	align-items: initial;
+	background-color: rgba(30, 30, 30, 0.3);
+
+	._villas-365-property-floater-content {
+		box-shadow: 0 0 10px 0 rgba(40,40,40,0.3);
+		border: none;
+	}
+
+	> .container {
+		margin-top: 120px;
+		margin-bottom: 0;
+		height: 1000px;
+	}
+
+	@media (min-width: 992px) {
+		position: relative;
+		overflow: visible;
+		pointer-events: none;
+		height: 0;
+		min-height: 0;
+		top: -30px;
+		align-items: inherit;
+		background-color: transparent;
+	}
+
+	@media (min-height: 600px) {
+		align-items: center;
+
+		> .container {
+			margin-top: 0;
+			height: auto;
+		}
+	}
+
+	&.float {
+		position: fixed;
+	}
+
+	#_villas-365-property-floater-discount-row {
+		._villas-365-property-floater-discount {
+			color: #fff;
+			background-color: #000;
+			border-radius: 0;
+			font-size: 14px;
+			padding: .375rem .75rem;
+			display: block;
+
+			._villas-365-property-discount-label {
+				width: auto;
+				max-width: 100%;
+			}
+
+			._villas-365-property-discount-text {
+				margin-left: 4px;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+#_villas-365-property-floater-tab-button {
+	@media (min-width: 992px) {
+		display: none;
+	}
+}
+
+#_villas-365-property-floater-close-button {
+	@media (min-width: 992px) {
+		display: none;
+	}
+}
+
+@media (max-width: 991px) {
+	body._villas-365-property-floater-visible {
+		overflow: hidden;
+
+		#_villas-365-property-floater {
+			top: 0 !important;
+			display: flex !important;
+			opacity: 0;
+			transition-property: opacity;
+			transition-duration: 350ms;
+			transition-timing-function: ease-in-out;
+
+			&._villas-365-property-floater-show {
+				opacity: 1;
+			}
+		}
+	}
+}

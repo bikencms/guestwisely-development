@@ -1,0 +1,59 @@
+@import "../libs/mobiscroll/css/mobiscroll.jquery.min.css";
+
+//Override the datepicker here as it is attached to the body element.
+/* Old Date Picker */
+.datepicker.dropdown-menu {
+	font-size: 18px;
+}
+
+.datepicker td,
+.datepicker th {
+	border-radius: 0;
+}
+
+.datepicker.dropdown-menu th,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.datepicker-inline td {
+	padding: 18px 17px 16px 17px;
+}
+
+.datepicker table tr td.disabled.disabled-date,
+.datepicker table tr td.disabled.disabled-date:hover
+{
+	background-color: #eee;
+	color: #a9a9a9;
+	cursor: default;
+}
+
+.datepicker table tr td.disabled.disabled-date.old,
+.datepicker table tr td.disabled.disabled-date.old:hover,
+.datepicker table tr td.disabled.disabled-date.new,
+.datepicker table tr td.disabled.disabled-date.new:hover
+{
+	background-color: #fff;
+	color: #999;
+}
+
+.datepicker table tr td.day.half-day-start {
+	background-color: #eee;
+	background-image: linear-gradient(315deg, #eee 50%, #fff 50%);
+}
+
+.datepicker table tr td.day.half-day-end {
+	background-color: #eee;
+	background-image: linear-gradient(315deg, #fff 50%, #eee 50%);
+}
+
+.datepicker table tr td.day.half-day-start:hover,
+.datepicker table tr td.day.half-day-end:hover {
+	background-color: #eee;
+	background-image: none;
+}
+/* Old Date Picker */
+
+.mbsc-ios {
+	&.mbsc-calendar-cell {
+		border-top-width: 0;
+	}
+}

@@ -1,0 +1,638 @@
+@import "variables";
+
+._villas-365-search {
+	label {
+		font-weight: 400;
+		font-size: 1rem;
+		color: $light;
+		margin-bottom: 0;
+	}
+
+	._villas-365-search-button {
+		cursor: pointer;
+		background-color: $primary;
+		border-color: $primary;
+		border-radius: 0;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: 24px;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		padding-top: 0.65rem;
+		padding-bottom: 0.5rem;
+
+		i {
+			font-size: 18px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: darken($primary, 10%);
+			border-color: darken($primary, 10%);
+		}
+	}
+
+	input.form-control {
+		border-radius: 0;
+		border-color: $septenary;
+
+		@media (min-width: 992px) {
+			border: none;
+		}
+
+		&::placeholder {
+			color: #b6babe;
+			font-size: 0.875rem;
+		}
+	}
+
+	.input-group {
+		.form-control {
+			border-right: none;
+			border-radius: 0;
+			padding-right: 0;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			line-height: 1.8;
+			height: 2.8rem;
+
+			@media (min-width: 992px) {
+				height: 2.8rem;
+			}
+		}
+		
+		.input-group-append {
+			cursor: default;
+			.input-group-text {
+				color: $tertiary;
+				background-color: #fff;
+				border-radius: 0;
+				border-color: $septenary;
+				padding: .375rem .6rem;
+				font-size: 20px;
+
+				@media (min-width: 992px) {
+					border-top: none;
+					border-bottom: none;
+					border-right-width: 2px;
+
+					&.no-border {
+						border-right: none;
+					}
+				}
+			}
+		}
+	}
+
+	._villas-365-option-checkboxes {
+		text-align: center;
+		
+		._villas-365-option-checkbox {
+			line-height: 1.2rem;
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+
+			input {
+				position: relative;
+				top: -2px;
+			}
+
+			._villas-365-option-checkbox-custom-container {
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+
+				._villas-365-option-checkbox-custom {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 20px;
+					width: 20px;
+					background-color: $light;
+					margin-right: 10px;
+					border: 1px solid $septenary;
+
+					> i {
+						visibility: hidden;
+						font-size: 13px;
+						color: $tertiary;
+					}
+
+					&.checked {
+						> i {
+							visibility: visible;
+						}
+						font-family: "Font Awesome 5 Free";
+					}
+				}
+				._villas-365-option-checkbox-custom-text {
+					color: $light;
+				}
+			}
+		}
+	}
+	
+	&._villas-365-search-1 {
+		._villas-365-option-checkboxes {
+			text-align: left;
+		}
+	}
+
+	&._villas-365-search-2 {
+		._villas-365-option-checkboxes {
+			text-align: left;
+		}
+	}
+
+	&._villas-365-search-full {
+		._villas-365-field-container {
+			padding-top: 20px;
+			padding-bottom: 20px;
+
+			> div {
+				padding-left: 15px;
+				padding-right: 15px;
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				@media (min-width: 768px) {
+					padding-left: 5px;
+					padding-right: 5px;
+
+					/* Select every 4th list item starting with first */
+					&:nth-child(3n+1) {
+						padding-left: 15px;
+					}
+		
+					/* Select every 3rd list item */
+					&:nth-child(3n) {
+						padding-right: 15px;
+					}
+
+					&:nth-last-child(-n+3) {
+						margin-bottom: 0;
+					}
+				}
+				@media (min-width: 992px) {
+					margin-bottom: 0px;
+
+					/* Select every 4th list item starting with first */
+					&:nth-child(3n+1) {
+						padding-left: 5px;
+					}
+		
+					/* Select every 3rd list item */
+					&:nth-child(3n) {
+						padding-right: 5px;
+					}
+
+					/* Select every 7th list item starting with first */
+					&:nth-child(6n+1) {
+						padding-left: 15px;
+					}
+		
+					/* Select every 6th list item */
+					&:nth-child(6n) {
+						padding-right: 15px;
+					}
+				}
+			}
+
+			&._villas-365-medium {
+				padding-top: 20px;
+				padding-bottom: 20px;
+	
+				> div {
+					padding-left: 15px;
+					padding-right: 15px;
+					margin-bottom: 20px;
+	
+					&:last-child {
+						margin-bottom: 0;
+					}
+	
+					@media (min-width: 768px) {
+						padding-left: 5px;
+						padding-right: 5px;
+	
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 15px;
+						}
+	
+						&:nth-last-child(-n+3) {
+							margin-bottom: 0;
+						}
+					}
+					@media (min-width: 992px) {
+						margin-bottom: 20px;
+	
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 15px;
+						}
+	
+						&:nth-last-child(-n+3) {
+							margin-bottom: 0;
+						}
+	
+						/* Select every 7th list item starting with first */
+						&:nth-child(6n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 6th list item */
+						&:nth-child(6n) {
+							padding-right: 15px;
+						}
+					}
+				}
+			}
+	
+			&._villas-365-small {
+				padding-top: 20px;
+				padding-bottom: 20px;
+	
+				> div {
+					padding-left: 15px;
+					padding-right: 15px;
+					margin-bottom: 20px;
+	
+					&:last-child {
+						margin-bottom: 0;
+					}
+	
+					@media (min-width: 768px) {
+						padding-left: 15px;
+						padding-right: 15px;
+						margin-bottom: 20px;
+	
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 15px;
+						}
+	
+						&:nth-last-child(-n+3) {
+							margin-bottom: 20px;
+						}
+					}
+					@media (min-width: 992px) {
+						margin-bottom: 20px;
+	
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 15px;
+						}
+	
+						&:nth-last-child(-n+3) {
+							margin-bottom: 20px;
+						}
+	
+						/* Select every 7th list item starting with first */
+						&:nth-child(6n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 6th list item */
+						&:nth-child(6n) {
+							padding-right: 15px;
+						}
+					}
+				}
+			}
+		}
+
+		._villas-365-options-container {
+			padding-top: 20px;
+			padding-bottom: 0;
+
+			> div {
+				padding-left: 15px;
+				padding-right: 15px;
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				@media (min-width: 768px) {
+					padding-left: 15px;
+					padding-right: 15px;
+
+					&:nth-last-child(-n+3) {
+						margin-bottom: 20px;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				@media (min-width: 992px) {
+					/* Select every 4th list item starting with first */
+					&:nth-child(3n+1) {
+						padding-left: 15px;
+					}
+		
+					/* Select every 3rd list item */
+					&:nth-child(3n) {
+						padding-right: 15px;
+					}
+
+					&:first-child {
+						padding-right: 5px;
+					}
+		
+					&:last-child {
+						padding-left: 5px;
+					}
+				}
+			}
+
+			@media (min-width: 992px) {
+				.col-lg-5-columns {
+					-webkit-box-flex: 0;
+					flex: 0 0 20%;
+					max-width: 20%;
+				}
+			}
+
+			._villas-365-option-container {
+				margin-bottom: 20px;
+				line-height: 1.2rem;
+			}
+
+			._villas-365-option-checkboxes {
+				text-align: left;
+				
+				._villas-365-option-checkbox {
+					margin-right: 0;
+		
+					._villas-365-option-checkbox-custom-container {
+						._villas-365-option-checkbox-custom-text {
+							color: $quinary;
+						}
+					}
+				}
+				
+				> div {
+					padding-left: 15px;
+					padding-right: 15px;
+	
+					@media (min-width: 768px) {
+						padding-left: 5px;
+						padding-right: 5px;
+
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 15px;
+						}
+					}
+					@media (min-width: 992px) {
+						/* Select every 4th list item starting with first */
+						&:nth-child(3n+1) {
+							padding-left: 5px;
+						}
+			
+						/* Select every 3rd list item */
+						&:nth-child(3n) {
+							padding-right: 5px;
+						}
+	
+						/* Select every 7th list item starting with first */
+						&:nth-child(5n+1) {
+							padding-left: 15px;
+						}
+			
+						/* Select every 6th list item */
+						&:nth-child(5n) {
+							padding-right: 15px;
+						}
+					}
+				}
+			}
+		}
+
+		._villas-365-hr-container {
+			._villas-365-hr {
+				width: 100%;
+				height: 1px;
+				background-color: $septenary;
+			}
+		}
+
+		input.form-control {
+			border: 1px solid $septenary;
+			height: 2.8rem;
+
+			&::placeholder {
+				font-size: 0.875rem;
+			}
+	
+			@media (min-width: 992px) {
+				border: 1px solid $septenary;
+				height: 2.8rem;
+			}
+		}
+	
+		.input-group {
+			.form-control {
+				border: 1px solid $septenary;
+				border-right: none;
+				height: 2.8rem;
+					
+				@media (min-width: 768px) {
+					height: 2.8rem;
+				}
+
+				
+				@media (max-width: 768px) {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+				}
+			}
+			
+			.input-group-append {
+				.input-group-text {
+					color: $tertiary;
+					background-color: #fff;
+					border: 1px solid $septenary;
+	
+					@media (min-width: 768px) {
+						border-top: 1px solid $septenary;
+						border-bottom: 1px solid $septenary;
+						border-right-width: 1px;
+	
+						&.no-border {
+							border-right: none;
+						}
+					}
+				}
+			}
+
+			&.search-categories {
+				.form-control {
+					border-right: 1px solid white !important;
+					border-radius: 5px;
+					background: transparent;
+					background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+					background-repeat: no-repeat;
+					background-position-x: 97%;
+					background-position-y: 10px;
+					& + .input-group-append {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.chosen-container {
+			&.chosen-container-single {
+				.chosen-single {
+					$input-line-height: 1.5;
+					$input-padding-y: .5rem;
+					$input-height: 2.8rem;
+					$input-height-lg: 2.8rem;
+
+					border: 1px solid $septenary;
+					height: $input-height;
+					line-height: $input-line-height;
+
+					@media (min-width: 992px) {
+						height: $input-height-lg;
+					}
+				}
+			}
+
+			&.chosen-container-active.chosen-with-drop {
+				.chosen-single {
+					border: 1px solid $septenary;
+				}
+			}
+		}
+
+		.chosen-input-group {
+			.chosen-container {
+				&.chosen-container-single {
+					.chosen-single {
+						border: 1px solid $septenary;
+						border-right: none;
+					}
+				}
+	
+				&.chosen-container-active.chosen-with-drop {
+					.chosen-single {
+						border: 1px solid $septenary;
+						border-right: none;
+					}
+				}
+			}
+		}
+
+		._villas-365-search-button {
+			flex-basis: 0;
+			flex-grow: 1;
+			max-width: 100%;
+			
+			&._villas-365-filter-button {
+				color: $quinary;
+				background-color: #fff;
+				border-color: #fff;
+				margin-right: 5px;
+				flex: 0 0 auto;
+				width: auto;
+				max-width: 100%;
+				
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: darken(#fff, 10%) !important;
+					border-color: darken(#fff, 10%) !important;
+				}
+			}
+		}
+
+		#_villas-365-search-form-filter {
+			position: absolute;
+			z-index: 1000;
+			background-color: transparent;
+			width: 100%;
+
+			._villas-365-search-form-filter-inner {
+				background-color: #fff;
+				border: 1px solid $septenary;
+				border-top: none;
+				
+				@media (min-width: 768px) {
+					._villas-365-search-form-filter-buttons {
+						> div {
+							padding-left: 5px;
+							padding-right: 15px;
+						}
+					}
+				}
+			}
+
+			#_villas-365-search-reset {
+				margin-right: 5px;
+			}
+
+			#_villas-365-search-apply,
+			#_villas-365-search-reset {
+				cursor: pointer;
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+			}
+		}
+	}
+
+	.search-categories {
+		font-size: 0.75rem;
+
+		.search-category {
+			font-weight: 700;
+		}
+
+		.search-category-property {
+			padding-left: 20px;
+		}
+
+		.chosen-results {
+			.group-result {
+				display: none;
+			}
+		}
+	}
+}

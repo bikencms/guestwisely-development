@@ -1,0 +1,519 @@
+@import "variables";
+
+$mapHeight: 1000px;
+
+.map-container {
+	width: 100%;
+	height: 500px;
+
+	@media (min-width: 768px) {
+		width: 100%;
+		height: $mapHeight;
+	}
+
+	.gm-style {
+		.gm-style-iw.gm-style-iw-c {
+			padding: 0 !important;
+
+			.gm-style-iw-d {
+				display: inline; // To fix Chrome putting right and bottom padding in that seems impossible to remove!
+			}
+		}
+		
+		.map-info-window {
+			width: 100%;
+
+			._villas-365-property-image {
+				img.img-fluid {
+					width: 100%;
+					max-width: 100%;
+
+					@media (min-width: 992px) {
+						max-width: 300px;
+					}
+				}
+			}
+		}
+	}
+}
+
+._villas-365-properties {
+	._villas-365-properties-title {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	._villas-365-properties-title-separator {
+		width: 100%;
+		border-bottom: 3px solid $quaternary;
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
+
+	._villas-365-properties-view-controls {
+		._villas-365-properties-view-control {
+			font-size: 24px;
+			opacity: 0.5;
+
+			&.active,
+			&:hover {
+				opacity: 1;
+			}
+
+			&._villas-365-properties-view-control-title {
+				color: $tertiary;
+				text-transform: uppercase;
+				font-size: 16px;
+				opacity: 1;
+			}
+		}
+	}
+
+	._villas-365-properties-sort-controls {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		._villas-365-properties-sort-control-label {
+			color: $tertiary;
+			text-transform: uppercase;
+			font-size: 16px;
+			opacity: 1;
+			margin-right: 15px;
+		}
+
+		.chosen-container {
+			min-width: 170px;
+
+			&.chosen-container-single {
+				.chosen-single {
+					border: 1px solid $senary;
+					border-radius: 0;
+					height: 2rem;
+					padding: .12rem .75rem;
+
+					div {
+						b {
+							background-position: 2px calc(.3rem);
+						}
+					}
+
+					abbr {
+						top: 10px;
+					}
+				}
+
+				.chosen-drop {
+					border-color: $senary;
+					border-radius: 0;
+					margin-top: -1px;
+				}
+			}
+
+			&.chosen-container-active.chosen-with-drop {
+				.chosen-single {
+					border-radius: 0;
+				}
+			}
+		}
+	}
+
+	._villas-365-property {
+		._villas-365-property-inner {
+			._villas-365-property-name {
+				margin-top: 0;
+				font-weight: 600;
+			}
+			
+			._villas-365-property-price {
+				font-weight: 600;
+			}
+		}
+	}
+
+	._villas-365-map-properties-container {
+		width: 100%;
+	
+		@media (min-width: 768px) {
+			height: $mapHeight;
+			overflow: auto;
+		}
+	}
+
+	&._villas-365-properties-list,
+	&._villas-365-properties-grid,
+	&._villas-365-properties-featured,
+	&._villas-365-property-related,
+	&._villas-365-properties-map {
+		._villas-365-property-image {
+			position: relative;
+			min-height: 130px;
+
+			._villas-365-property-info-label {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				border-radius: 0;
+				font-size: 14px;
+				// color: #fff;
+				padding: .375rem .75rem;
+
+				&._villas-365-property-featured {
+					cursor: default;
+				}
+				
+				&._villas-365-property-discount {
+					// background-color: $dark;
+					display: flex;
+					cursor: pointer;
+
+					._villas-365-property-discount-label {
+						flex: 0 0 auto;
+						width: auto;
+						max-width: 100%;
+						display: block;
+					}
+
+					._villas-365-property-discount-icon {
+						margin-left: 4px;
+						margin-right: 0;
+					}
+
+					._villas-365-property-discount-text {
+						flex: 0 0 auto;
+						max-width: 100%;
+						display: none;
+					}
+
+					&:hover {
+						._villas-365-property-discount-label {
+							display: none;
+						}
+
+						._villas-365-property-discount-icon {
+							margin-left: 0;
+							margin-right: 4px;
+						}
+
+						._villas-365-property-discount-text {
+							display: block;
+						}	
+					}
+				}
+			}
+		}
+	}
+
+	&._villas-365-properties-featured,
+	&._villas-365-properties-grid,
+	&._villas-365-properties-map {
+		._villas-365-property-image {
+			margin-bottom: 15px;
+
+			._villas-365-property-image-link {
+				display: block;
+				width: 100%;
+				height: 200px;
+				background-size: cover;
+				background-position: center center;
+
+				@media (max-width: 960px) {
+					background-image: none !important;
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&._villas-365-properties-map {
+		._villas-365-property-image {
+			margin-bottom: 15px;
+			@media (min-width: 992px) {
+				margin-bottom: 0;
+			}
+		}
+		
+		.map-info-window {
+			&._villas-365-property {
+				padding: 0;
+			}
+
+			._villas-365-property-image {
+				._villas-365-property-image-link {
+					height: auto;
+				}
+			}
+		}
+	}
+
+	&._villas-365-properties-list {
+		._villas-365-property-image {
+			margin-bottom: 15px;
+			@media (min-width: 992px) {
+				margin-bottom: 0;
+			}
+		}
+		
+		._villas-365-property-price {
+			text-align: right;
+		}
+	}
+
+	._villas-365-property-price {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	._villas-365-property-inner-text {
+		height: 100%;
+
+		._villas-365-property-price {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&._villas-365-properties-grid {
+		._villas-365-property-inner-text {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+	&._villas-365-properties-map {
+		._villas-365-property-inner-text {
+			padding-left: 5px;
+			padding-right: 5px;
+
+			@media (min-width: 992px) {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	&._villas-365-properties-list {
+		._villas-365-property-inner-text {
+			padding-left: 5px;
+			padding-right: 5px;
+
+			@media (min-width: 992px) {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	&._villas-365-properties-map {
+		._villas-365-properties-map-full {
+			._villas-365-property-image {
+				margin-bottom: 0;
+
+				._villas-365-property-image-overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+
+					/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+50,000000+100&0+50,0.3+100 */
+					background: linear-gradient(to bottom,  rgba(0,0,0,0) 50%,rgba(0,0,0,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				}
+
+				._villas-365-property-info-label {
+					position: absolute;
+					top: 20px;
+					left: 20px;
+					border-radius: 0;
+					font-size: 14px;
+					// color: #fff;
+					padding: .375rem .75rem;
+
+					&._villas-365-property-featured {
+						cursor: default;
+					}
+					
+					&._villas-365-property-discount {
+						// background-color: $dark;
+						display: flex;
+						cursor: pointer;
+
+						._villas-365-property-discount-label {
+							flex: 0 0 auto;
+							width: auto;
+							max-width: 100%;
+							display: block;
+						}
+
+						._villas-365-property-discount-icon {
+							margin-left: 4px;
+							margin-right: 0;
+						}
+
+						._villas-365-property-discount-text {
+							flex: 0 0 auto;
+							max-width: 100%;
+							display: none;
+						}
+
+						&:hover {
+							._villas-365-property-discount-label {
+								display: none;
+							}
+
+							._villas-365-property-discount-icon {
+								margin-left: 0;
+								margin-right: 4px;
+							}
+
+							._villas-365-property-discount-text {
+								display: block;
+							}	
+						}
+					}
+				}
+
+				._villas-365-property-rooms {
+					position: absolute;
+					bottom: 15px;
+					left: 20px;
+					display: flex;
+					align-items: center;
+					margin-bottom: 0;
+					color: #fff !important;
+
+					._villas-365-property-room {
+						> ._villas-365-property-room-icon {
+							color: #fff !important;
+							font-size: 14px;
+						}
+					}
+				}
+
+				._villas-365-property-save-button {
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					color: #fff;
+				}
+			}
+
+			._villas-365-property {
+				._villas-365-property-inner {
+					padding: 0;
+					
+					._villas-365-property-price {
+						font-size: 18px;
+
+						@media (min-width: 480px) {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+
+			._villas-365-property-image {
+				margin-bottom: 0;
+				@media (min-width: 992px) {
+					margin-bottom: 0;
+				}
+
+				._villas-365-property-rooms {
+					bottom: 10px;
+					left: 10px;
+				}
+
+				._villas-365-property-save-button {
+					bottom: 10px;
+					right: 10px;
+				}
+			}
+			
+			.map-info-window {
+				._villas-365-property-image {
+					._villas-365-property-image-link {
+						height: auto;
+
+						> img {
+							display: block;
+							visibility: visible;
+
+							@media (min-width: 992px) {
+								visibility: hidden;
+								max-width: 300px;
+							}
+						}
+					}
+
+					._villas-365-property-rooms {
+						._villas-365-property-room {
+							margin-right: 10px;
+					
+							&:last-child {
+								margin-right: 0;
+							}
+					
+							> ._villas-365-property-room-icon {
+								font-size: 16px;
+							}
+						}
+					}
+				}
+				
+				._villas-365-property-inner-text {
+					padding: 10px;
+					
+					._villas-365-property-name {
+						font-size: 18px;
+						font-weight: 700;
+						padding-bottom: 0;
+						margin-bottom: 0;
+					}
+
+					._villas-365-property-footer {
+						display: flex;
+						flex-wrap: wrap;
+						align-items: center;
+						margin-top: 15px;
+
+						> div {
+							flex: 0 0 100%;
+							max-width: 100%;
+
+							@media (min-width: 480px) {
+								flex: 1 0 0%;
+							}
+
+							._villas-365-property-button {
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+
+			._villas-365-property-inner-text {
+				padding-left: 5px;
+				padding-right: 5px;
+
+				@media (min-width: 992px) {
+					padding-top: 5px;
+					padding-bottom: 5px;
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+._villas-365-properties-view-controls {
+	._villas-365-properties-view-control {
+		color: $primary;
+	}
+}

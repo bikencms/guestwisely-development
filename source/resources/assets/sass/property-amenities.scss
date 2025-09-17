@@ -1,0 +1,1114 @@
+@import "variables";
+
+._villas-365-property-amenities {
+	position: relative;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	overflow: visible;
+
+	._villas-365-property-amenity-switcher {
+		position: relative;
+
+		._villas-365-property-amenity-switcher-item-selected {
+			cursor: pointer;
+			font-size: 18px;
+			font-weight: 700;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		._villas-365-property-amenity-switcher-items {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			padding: 5px 10px;
+			border-radius: 0;
+			border: 5px solid #efefef;
+			background-color: #fff;
+			box-shadow: 0 0 10px 0 rgba(97, 97, 97, 0.6);
+			z-index: 10000;
+			text-align: left;
+			
+			._villas-365-property-amenity-switcher-item {
+				cursor: pointer;
+				font-size: 16px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+			}
+		}
+	}
+
+	._villas-365-property-amenity-switcher-inline {
+		position: relative;
+
+		._villas-365-property-amenity-switcher-inline-items {			
+			._villas-365-property-amenity-switcher-inline-item {
+				position: relative;
+				cursor: pointer;
+				font-size: 16px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 8px;
+				padding-right: 8px;
+				margin-left: -8px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-style: normal;
+				text-transform: none;
+				text-decoration: none;
+				text-align: left;
+
+				i {
+					display: none;
+				}
+
+				._villas-365-property-amenity-switcher-inline-item-background {
+					display: none;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+					opacity: 0.15;
+				}
+
+				&.active {
+					font-weight: 700;
+
+					i {
+						display: inline-block;
+					}
+
+					._villas-365-property-amenity-switcher-inline-item-background {
+						display: block;
+					}
+
+					> span {
+						z-index: 100;
+					}
+				}
+			}
+		}
+	}
+
+	._villas-365-property-amenities-container {
+		position: relative;
+
+		._villas-365-property-amenity-group {
+			position: absolute;
+			top: 0;
+			left: 15px;
+			width: calc(100% - 30px);
+
+			&.active {
+				position: relative;
+				left: 0;
+				width: 100%;
+			}
+
+			._villas-365-property-amenity {
+				text-align: left;
+				display: flex;
+				align-items: center;
+
+				._villas-365-property-amenity-icon {
+					display: inline-block;
+					font-size: 24px;
+				}
+
+				._villas-365-property-amenity-name {
+					display: inline-block;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	._villas-365-property-amenity-specific-room-buttons {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+
+		._villas-365-property-amenity-specific-room-buttons-label {
+			font-weight: normal;
+			font-style: normal;
+			text-transform: none;
+			text-decoration: none;
+			color: inherit;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			font-size: 15px;
+		}
+
+		._villas-365-property-amenity-room-button {
+			padding: 2px 9px;
+			border-radius: 3px;
+			background-color: $senary;
+			cursor: pointer;
+
+			&.active, &:hover {
+				background-color: $primary;
+				color: #fff;
+			}
+		}
+	}
+
+	._villas-365-property-amenity-specific-room {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		width: calc(100% - 30px);
+
+		&.active {
+			position: relative;
+			top: auto;
+			left: auto;
+			width: 100%;
+		}
+	}
+}
+
+._villas-365-property-amenity-icon {
+	background-image: url(../img/amenities-icons.png);
+	background-repeat: no-repeat;
+	background-position-x : center;
+	width: 52px;
+	height: 34px;
+	display: inline-block;
+
+	&.amenity-extra {
+		background-image: url(../img/amenity-other.png);
+	}
+  
+	&.amenity-air-conditioned {
+		background-position-y: -162px;
+	}
+	
+	&.amenity-central-heating {
+		background-position-y: -562px;
+	}
+	
+	&.amenity-child-friendly {
+		background-position-y: -42px;
+	}
+	
+	&.amenity-dedicated-parking-space {
+		background-position-y: -122px;
+	}
+	
+	&.amenity-high-ceilings {
+		background-position-y: -442px;
+	}
+	
+	&.amenity-mountain-view {
+		background-position-y: -402px;
+	}
+	
+	&.amenity-ocean-view {
+		background-position-y: -2px;
+	}
+	
+	&.amenity-off-street-parking {
+		background-position-y: -522px;
+	}
+	
+	&.amenity-on-the-ocean {
+		background-position-y: -362px;
+	}
+	
+	&.amenity-spacious {
+		background-position-y: -82px;
+	}
+	
+	&.amenity-wheel-chair-access {
+		background-position-y: -482px;
+	}
+	
+	&.amenity-bath {
+		background-position-y: -802px;
+	}
+	
+	&.amenity-bath-shower {
+		background-position-y: -842px;
+	}
+	
+	&.amenity-hair-dryer {
+		background-position-y: -1002px;
+	}
+	
+	&.amenity-shower {
+		background-position-y: -882px;
+	}
+	
+	&.amenity-toilet {
+		background-position-y: -922px;
+	}
+	
+	&.amenity-towels-inc {
+		background-position-y: -962px;
+	}
+	
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	}
+	
+	&.amenity-alarm-clock {
+		background-position-y: -762px;
+	}
+	
+	&.amenity-ceiling-fan {
+		background-position-y: -322px;
+	}
+	
+	&.amenity-en-suite {
+		background-position-y: -642px;
+	}
+	
+	&.amenity-fan {
+		background-position-y: -722px;
+	}
+	
+	&.amenity-king {
+		background-position-y: -682px;
+	}
+	
+	&.amenity-linen-inc {
+		background-position-y: -282px;
+	}
+	
+	&.amenity-queen {
+		background-position-y: -202px;
+	}
+	
+	&.amenity-sleeps {
+		background-position-y: -602px;
+	}
+	
+	&.amenity-double {
+		background-position-y: -3722px;
+	}
+	
+	&.amenity-twin {
+		background-position-y: -242px;
+	}
+	
+	&.amenity-hot-tub {
+		background-position-y: -2842px;
+	}
+	
+	&.amenity-whirlpool {
+		background-position-y: -2882px;
+	}
+	
+	&.amenity-seats {
+		background-position-y: -1042px;
+	}
+	
+	&.amenity-seats-indoors {
+		background-position-y: -1082px;
+	}
+	
+	&.amenity-seats-outdoors {
+		background-position-y: -1122px;
+	}
+	
+	&.amenity-ceiling-fan {
+		background-position-y: -322px;
+	}
+	
+	&.amenity-coffee-maker {
+		background-position-y: -1402px;
+	}
+	
+	&.amenity-cooking-utensils {
+		background-position-y: -1482px;
+	}
+	
+	&.amenity-dishes-utensils {
+		background-position-y: -1442px;
+	}
+	
+	&.amenity-dishwasher {
+		background-position-y: -1362px;
+	}
+	
+	&.amenity-fan {
+		background-position-y: -722px;
+	}
+	
+	&.amenity-freezer {
+		background-position-y: -1202px;
+	}
+	
+	&.amenity-full-modernized {
+		background-position-y: -1562px;
+	}
+	
+	&.amenity-ice-maker {
+		background-position-y: -1242px;
+	}
+	
+	&.amenity-microwave {
+		background-position-y: -1322px;
+	}
+	
+	&.amenity-oven {
+		background-position-y: -1282px;
+	}
+	
+	&.amenity-patnry-items {
+		background-position-y: -1522px;
+	}
+	
+	&.amenity-refridgerator {
+		background-position-y: -1162px;
+	}
+	
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	}
+	
+	&.amenity-ceiling-fan {
+		background-position-y: -722px;
+	}
+	
+	&.amenity-chair {
+		background-position-y: -1642px;
+	}
+	
+	&.amenity-fan {
+		background-position-y: -322px;
+	}
+	
+	&.amenity-high-ceiling {
+		background-position-y: -442px;
+	}
+	
+	&.amenity-seats {
+		background-position-y: -1042px;
+	}
+	
+	&.amenity-sofa {
+		background-position-y: -1602px;
+	}
+	
+	&.amenity-spacious {
+		background-position-y: -82px;
+	}
+	
+	&.amenity-air-conditioning {
+		background-position-y: -162px;
+	}
+	
+	&.amenity-barbecue {
+		background-position-y: -1682px;
+	}
+	
+	&.amenity-beach-equipment {
+		background-position-y: -2402px;
+	}
+	
+	&.amenity-beach-towels {
+		background-position-y: -2362px;
+	}
+	
+	&.amenity-books {
+		background-position-y: -2682px;
+	}
+	
+	&.amenity-broadband {
+		background-position-y: -2082px;
+	}
+	
+	&.amenity-cable {
+		background-position-y: -1882px;
+	}
+	
+	&.amenity-central-heating {
+		background-position-y: -562px;
+	}
+	
+	&.amenity-deck {
+		background-position-y: -1802px;
+	}
+	
+	&.amenity-dryer {
+		background-position-y: -2562px;
+	}
+	
+	&.amenity-dvd {
+		background-position-y: -1962px;
+	}
+	
+	&.amenity-dvds {
+		background-position-y: -2762px;
+	}
+	
+	&.amenity-fireplace {
+		background-position-y: -2442px;
+	}
+	
+	&.amenity-free-phone-service {
+		background-position-y: -2042px;
+	}
+	
+	&.amenity-gas-grill {
+		background-position-y: -1722px;
+	}
+	
+	&.amenity-iron-board {
+		background-position-y: -2642px;
+	}
+	
+	&.amenity-jacuzzi {
+		background-position-y: -2202px;
+	}
+	
+	&.amenity-lawn-garden {
+		background-position-y: -2322px;
+	}
+	
+	&.amenity-patio {
+		background-position-y: -1802px;
+	}
+	
+	&.amenity-pool {
+		background-position-y: -2162px;
+	}
+	
+	&.amenity-radio {
+		background-position-y: -2802px;
+	}
+	
+	&.amenity-sauna {
+		background-position-y: -2242px;
+	}
+	
+	&.amenity-stereo {
+		background-position-y: -2002px;
+	}
+	
+	&.amenity-tennis-court {
+		background-position-y: -2282px;
+	}
+	
+	&.amenity-tv {
+		background-position-y: -1842px;
+	}
+	
+	&.amenity-vcr {
+		background-position-y: -1922px;
+	}
+	
+	&.amenity-veranda {
+		background-position-y: -1762px;
+	}
+	
+	&.amenity-videos {
+		background-position-y: -2722px;
+	}
+	
+	&.amenity-washer {
+		background-position-y: -2522px;
+	}
+	
+	&.amenity-washer-dryer {
+		background-position-y: -2602px;
+	}
+	
+	&.amenity-wheel-chair-access {
+		background-position-y: -482px;
+	}
+	
+	&.amenity-wifi {
+		background-position-y: -2122px;
+	}
+	
+	&.amenity-woodstove {
+		background-position-y: -2482px;
+	}
+	
+	&.amenity-boating {
+		background-position-y: -2922px;
+	}
+	
+	&.amenity-cinema {
+		background-position-y: -3562px;
+	}
+	
+	&.amenity-golf {
+		background-position-y: -2962px;
+	}
+	
+	&.amenity-horseback-riding {
+		background-position-y: -3002px;
+	}
+	
+	&.amenity-mall {
+		background-position-y: -3602px;
+	}
+	
+	&.amenity-mountain-climbing {
+		background-position-y: -3162px;
+	}
+	
+	&.amenity-nature {
+		background-position-y: -3642px;
+	}
+	
+	&.amenity-off-roading {
+		background-position-y: -3202px;
+	}
+	
+	&.amenity-post-offie {
+		background-position-y: -3522px;
+	}
+	
+	&.amenity-rain-forest {
+		background-position-y: -3242px;
+	}
+	
+	&.amenity-restaurants {
+		background-position-y: -3442px;
+	}
+	
+	&.amenity-shops {
+		background-position-y: -3482px;
+	}
+	
+	&.amenity-site-seeing {
+		background-position-y: -3282px;
+	}
+	
+	&.amenity-skiing {
+		background-position-y: -3762px;
+	}
+	
+	&.amenity-snorkel-scuba {
+		background-position-y: -3042px;
+	}
+	
+	&.amenity-surfing {
+		background-position-y: -3082px;
+	}
+	
+	&.amenity-tennis {
+		background-position-y: -2282px;
+	}
+	
+	&.amenity-volcano {
+		background-position-y: -3322px;
+	}
+	
+	&.amenity-walking {
+		background-position-y: -3362px;
+	}
+	
+	&.amenity-water-sports {
+		background-position-y: -3122px;
+	}
+	
+	&.amenity-woodland {
+		background-position-y: -3402px;
+	}
+	
+	&.amenity-safe-box {
+		background-position-y: -3682px;
+	}
+	
+	&.amenity-single-bed {
+		background-position-y: -3802px;
+	}
+	
+	&.amenity-balcony {
+		background-position-y: -3842px;
+	}
+	
+	.swimming-pool {
+		background-position-y: -3882px;
+	}
+	
+	&.amenity-separate-kitchen {
+		background-position-y: -3922px;
+	}
+	
+	&.amenity-heated-pool {
+		background-position-y: -3962px;
+	}
+	
+	&.amenity-elevator {
+		background-position-y: -4002px;
+	}
+	
+	&.amenity-double-sofa-bed {
+		background-position-y: -4042px;
+	}
+	
+	&.amenity-beach-front {
+		background-position-y: -4082px;
+	}
+	
+	&.amenity-fishing {
+		background-position-y: -4122px;
+	}
+	
+	&.amenity-toaster {
+		background-position-y: -4162px;
+	}
+	
+	&.amenity-kettle {
+		background-position-y: -4202px;
+	}
+	
+	&.amenity-stovetop {
+		background-position-y: -4242px;
+	}
+	
+	&.amenity-welcome-pack {
+		background-position-y: -4282px;
+	}
+	
+	&.amenity-baby-cot {
+		background-position-y: -4322px;
+	}
+
+	&.amenity-baby-high-chair {
+		background-position-y: -4362px;
+	}
+
+	&.amenity-blender {
+		background-position-y: -4402px;
+	}
+
+	&.amenity-dining-room {
+		background-position-y: -4442px;
+	}
+
+	&.amenity-drying-rack {
+		background-position-y: -4482px;
+	}
+
+	&.amenity-free-bike {
+		background-position-y: -4522px;
+	}
+
+	&.amenity-pool-table {
+		background-position-y: -4562px;
+	}
+
+	&.amenity-bed-linen-towels {
+		background-position-y: -4602px;
+	}
+
+	&.amenity-smoke-detector {
+		background-position-y: -4642px;
+	}
+
+	&.amenity-carbon-monoxide-detector {
+		background-position-y: -4682px;
+	}
+
+	&.amenity-fire-extinguisher {
+		background-position-y: -4722px;
+	}
+
+	&.amenity-seaview {
+		background-position-y: -4762px;
+	}
+
+	&.amenity-privat-hot-tub {
+		background-position-y: -4802px;
+	}
+
+	&.amenity-massage-room {
+		background-position-y: -4842px;
+	}
+
+	&.amenity-ski-in-out {
+		background-position-y: -4882px;
+	}
+
+	&.amenity-table-tennis {
+		background-position-y: -4922px;
+	}
+
+	&.amenity-video-games {
+		background-position-y: -4962px;
+	}
+
+	&.amenity-wine-cellar {
+		background-position-y: -5002px;
+	}
+
+	&.amenity-yoga-studio {
+		background-position-y: -5042px;
+	}
+
+	&.amenity-gym {
+		background-position-y: -5082px;
+	}
+
+	&.amenity-bunk-bed {
+		background-position-y: -5122px;
+	}
+
+	&.amenity-engine {
+		background-position-y: -5162px;
+	}
+
+	&.amenity-height {
+		background-position-y: -5202px;
+	}
+
+	&.amenity-payload {
+		background-position-y: -5242px;
+	}
+
+	&.amenity-registered-year {
+		background-position-y: -5282px;
+	}
+
+	&.amenity-seatbelt {
+		background-position-y: -5322px;
+	}
+
+	&.amenity-weight {
+		background-position-y: -5362px;
+	}
+
+	&.amenity-width {
+		background-position-y: -5402px;
+	}
+
+	&.amenity-automatic-transmission {
+		background-position-y: -5442px;
+	}
+
+	&.amenity-bluetooth-audio {
+		background-position-y: -5482px;
+	}
+
+	&.amenity-car-key {
+		background-position-y: -5522px;
+	}
+
+	&.amenity-headlights {
+		background-position-y: -5562px;
+	}
+
+	&.amenity-reverse {
+		background-position-y: -5602px;
+	}
+
+	&.amenity-sat-nav {
+		background-position-y: -5642px;
+	}
+
+	&.amenity-shutter {
+		background-position-y: -5682px;
+	}
+
+	&.amenity-two-12v-sockets {
+		background-position-y: -5722px;
+	}
+
+	&.amenity-windscreen {
+		background-position-y: -5762px;
+	}
+
+	&.amenity-outdoor-pool {
+		background-position-y: -5802px;
+	}
+
+	&.amenity-beach {
+		background-position-y: -5842px;
+	}
+
+	&.amenity-downtown {
+		background-position-y: -5882px;
+	}
+
+	&.amenity-golf-course-front {
+		background-position-y: -5922px;
+	}
+
+	&.amenity-golf-course-view {
+		background-position-y: -5962px;
+	}
+
+	&.amenity-lakefront {
+		background-position-y: -6002px;
+	}
+
+	&.amenity-lake-view {
+		background-position-y: -6042px;
+	}
+
+	&.amenity-mountain {
+		background-position-y: -6082px;
+	}
+
+	&.amenity-near-the-ocean {
+		background-position-y: -6122px;
+	}
+
+	&.amenity-resort {
+		background-position-y: -6162px;
+	}
+
+	&.amenity-river {
+		background-position-y: -6202px;
+	}
+
+	&.amenity-rural {
+		background-position-y: -6242px;
+	}
+
+	&.amenity-syi-in {
+		background-position-y: -6282px;
+	}
+
+	&.amenity-syi-out {
+		background-position-y: -6322px;
+	}
+
+	&.amenity-town {
+		background-position-y: -6362px;
+	}
+
+	&.amenity-village {
+		background-position-y: -6402px;
+	}
+
+	&.amenity-water-view {
+		background-position-y: -6442px;
+	}
+
+	&.amenity-waterfront {
+		background-position-y: -6482px;
+	}
+
+	&.amenity-street-parking {
+		background-position-y: -6522px;
+	}
+
+	&.amenity-terrace {
+		background-position-y: -6562px;
+	}
+
+	&.amenity-table-football {
+		background-position-y: -6602px;
+	}
+
+	&.amenity-boules-pitch {
+		background-position-y: -6642px;
+	}
+
+	&.amenity-darts {
+		background-position-y: -6682px;
+	}
+
+	&.amenity-kayaks {
+		background-position-y: -6722px;
+	}
+
+	&.amenity-boat-mooring-at-villa {
+		background-position-y: -6762px;
+	}
+
+	&.amenity-boat-mooring-at-local-marina {
+		background-position-y: -6802px;
+	}
+
+	&.amenity-mummer-outdoor-kitchen {
+		background-position-y: -6842px;
+	}
+
+	&.amenity-konoba-indoor-BBQ-dining-room {
+		background-position-y: -6882px;
+	}
+
+	&.amenity-speakers {
+		background-position-y: -6922px;
+	}
+
+	&.amenity-smart-TV {
+		background-position-y: -6962px;
+	}
+
+	&.amenity-laptop-desktop-computer {
+		background-position-y: -7002px;
+	}
+
+	&.amenity-badminton-court {
+		background-position-y: -7042px;
+	}
+
+	&.amenity-games-room {
+		background-position-y: -7082px;
+	}
+
+	&.amenity-outdoor-market {
+		background-position-y: -7122px;
+	}
+
+	&.amenity-pharmacy {
+		background-position-y: -7162px;
+	}
+
+	&.amenity-hospital {
+		background-position-y: -7202px;
+	}
+
+	&.amenity-park {
+		background-position-y: -7242px;
+	}
+
+	&.amenity-bank {
+		background-position-y: -7282px;
+	}
+
+	&.amenity-ATM {
+		background-position-y: -7322px;
+	}
+
+	&.amenity-airport {
+		background-position-y: -7362px;
+	}
+
+	&.amenity-activity-centre_park {
+		background-position-y: -7402px;
+	}
+
+	&.amenity-cycle-trails {
+		background-position-y: -7442px;
+	}
+
+	&.amenity-night-clubs {
+		background-position-y: -7482px;
+	}
+
+	&.amenity-ferry-port {
+		background-position-y: -7522px;
+	}
+
+	&.amenity-large-supermarket {
+		background-position-y: -7562px;
+	}
+
+	&.amenity-bakery {
+		background-position-y: -7602px;
+	}
+
+	&.amenity-small-local-food-shop {
+		background-position-y: -7642px;
+	}
+
+	&.amenity-bus-stop {
+		background-position-y: -7682px;
+	}
+
+	&.amenity-paid-parking-street {
+		background-position-y: -7722px;
+	}
+
+	&.amenity-paid-parking-garage {
+		background-position-y: -7762px;
+	}
+
+	&.amenity-murphy-bed {
+		background-position-y: -7802px;
+	}
+
+	&.amenity-paid-baby-cot-request {
+		background-position-y: -7842px;
+	}
+
+	&.amenity-pets-paid {
+		background-position-y: -7882px;
+	}
+
+	&.amenity-paid-baby-cot {
+		background-position-y: -7922px;
+	}
+
+	&.amenity-cleanliness-safety-216 {
+		background-position-y: -7962px;
+	}
+
+	&.amenity-cleanliness-safety-217 {
+		background-position-y: -8002px;
+	}
+
+	&.amenity-cleanliness-safety-218 {
+		background-position-y: -8042px;
+	}
+
+	&.amenity-cleanliness-safety-219 {
+		background-position-y: -8082px;
+	}
+
+	&.amenity-cleanliness-safety-220 {
+		background-position-y: -8122px;
+	}
+
+	&.amenity-cleanliness-safety-221 {
+		background-position-y: -8162px;
+	}
+
+	&.amenity-cleanliness-safety-222 {
+		background-position-y: -8202px;
+	}
+
+	&.amenity-cleanliness-safety-223 {
+		background-position-y: -8242px;
+	}
+
+	&.amenity-cleanliness-safety-224 {
+		background-position-y: -8282px;
+	}
+
+	&.amenity-cleanliness-safety-225 {
+		background-position-y: -8322px;
+	}
+
+	&.amenity-cleanliness-safety-226 {
+		background-position-y: -8362px;
+	}
+
+	&.amenity-communal-pool {
+		background-position-y: -8402px;
+	}
+
+	&.amenity-breakfast-booking-possible {
+		background-position-y: -8442px;
+	}
+
+	&.amenity-breakfast-included{
+		background-position-y: -8482px;
+	}
+
+	&.amenity-maid-service {
+		background-position-y: -8522px;
+	}
+
+	&.amenity-iron {
+		background-position-y: -8572px;
+	}
+
+	&.amenity-airfryer {
+		background-position-y: -8614px;
+	}
+
+	&.amenity-sandwich-maker {
+		background-position-y: -8654px;
+	}
+
+	&.amenity-coffee-plunger {
+		background-position-y: -8697px;
+	}
+}

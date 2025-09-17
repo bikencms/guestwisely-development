@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){"undefined"!=typeof a2a_config&&"undefined"!=typeof _villas365CurrentPropertyUrl&&a2a_config.callbacks.push({share:function(r){return{url:_villas365CurrentPropertyUrl}}})});

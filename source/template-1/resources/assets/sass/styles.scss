@@ -1,0 +1,727 @@
+//Overrides for any Wordpress/Divi styles.
+
+body {
+	#main-content {
+		._villas-365-bootstrap {
+			.container {
+				padding-top: 0;
+
+				&::before {
+					position: absolute;
+					top: 0;
+					width: 0;
+					background-color: transparent;
+					content: "";
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+//Plugin front-end styles.
+._villas-365-bootstrap {
+	@import "master";
+	@import "variables";
+
+	input[type="date"] {
+		height: 46px;
+	}
+
+	.unstyled-link {
+		&,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.pagination {
+		border-top: 0;
+	}
+
+	._villas-365-title {
+		color: $primary;
+	}
+
+	._villas-365-property-button {
+		background-color: $primary;
+		border-color: $primary;
+		border-radius: 0;
+		border-width: 2px;
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: darken($primary, 10%) !important;
+			border-color: darken($primary, 10%) !important;
+		}
+
+		&._villas-365-property-button-alt {
+			border-color: $light;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: darken($primary, 10%) !important;
+				border-color: $light !important;
+			}
+		}
+
+		&._villas-365-property-button-inverted {
+			background-color: $light;
+			border-color: $primary;
+			color: $primary;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $light !important;
+				border-color: darken($primary, 10%) !important;
+				color: darken($primary, 10%) !important;
+			}
+		}
+	}
+
+	._villas-365-property-rooms {
+		margin-bottom: 15px;
+
+		._villas-365-property-room {
+			display: inline-block;
+			margin-right: 15px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			> ._villas-365-property-room-icon {
+				color: $primary;
+				font-size: 18px;
+			}
+		}
+	}
+
+	&._villas-365-properties {
+		padding-top: $grid-gutter-width;
+		padding-bottom: $grid-gutter-width;
+
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6 {
+			padding-top: 0;
+		}
+
+		._villas-365-properties-view-controls {
+			display: flex;
+			align-items: center;
+			
+			._villas-365-properties-view-control {
+				margin-right: 15px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&._villas-365-property-container {
+		$banner-item-container-height-xs: auto;
+		$banner-item-container-height-sm: auto;
+		$banner-item-container-height-md: 80vh;
+		$banner-item-container-height-lg: $banner-item-container-height-md;
+
+		$banner-item-container-min-height-xs: auto;
+		$banner-item-container-min-height-sm: auto;
+		$banner-item-container-min-height-md: 475px;
+		$banner-item-container-min-height-lg: 475px;
+
+		$banner-item-container-max-height-xs: auto;
+		$banner-item-container-max-height-sm: auto;
+		$banner-item-container-max-height-md: 750px;
+		$banner-item-container-max-height-lg: 750px;
+
+		.banner-carousel {
+			position: relative;
+			background-color: transparent;
+
+			@include media-breakpoint-up(md) {
+				background-color: transparent;
+			}
+
+			.banner-item-container {
+				position: relative;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-attachment: scroll;
+				height: $banner-item-container-height-xs;
+				min-height: $banner-item-container-min-height-xs;
+				max-height: $banner-item-container-max-height-xs;
+				width: 100%;
+
+				$background-size-xs: cover;
+				-webkit-background-size: $background-size-xs;
+				-moz-background-size: $background-size-xs;
+				-o-background-size: $background-size-xs;
+				background-size: $background-size-xs;
+
+				@include media-breakpoint-up(md) {
+					$background-size-sm: cover;
+					-webkit-background-size: $background-size-sm;
+					-moz-background-size: $background-size-sm;
+					-o-background-size: $background-size-sm;
+					background-size: $background-size-sm;
+					height: $banner-item-container-height-sm;
+					min-height: $banner-item-container-min-height-sm;
+					max-height: $banner-item-container-max-height-sm;
+				}
+
+				@include media-breakpoint-up(lg) {
+					$background-size-md: cover;
+					-webkit-background-size: $background-size-md;
+					-moz-background-size: $background-size-md;
+					-o-background-size: $background-size-md;
+					background-size: $background-size-md;
+					height: $banner-item-container-height-md;
+					min-height: $banner-item-container-min-height-md;
+					max-height: $banner-item-container-max-height-md;
+				}
+
+				@include media-breakpoint-up(xl) {
+					$background-size-lg: cover;
+					-webkit-background-size: $background-size-lg;
+					-moz-background-size: $background-size-lg;
+					-o-background-size: $background-size-lg;
+					background-size: $background-size-lg;
+					height: $banner-item-container-height-lg;
+					min-height: $banner-item-container-min-height-lg;
+					max-height: $banner-item-container-max-height-lg;
+				}
+			}
+
+			.carousel-control {
+				background-image: none;
+				cursor: pointer;
+
+				.carousel-control-icon {
+					position: absolute;
+					top: 40%;
+					bottom: auto;
+					font-size: 2em;
+
+					@include media-breakpoint-up(md) {
+						top: 45%;
+						font-size: 3em;
+					}
+				}
+
+				&.left {
+					.carousel-control-icon {
+						left: 25%;
+					}
+				}
+				&.right {
+					.carousel-control-icon {
+						right: 25%;
+					}
+				}
+			}
+		}
+
+		.site-content {
+			padding-top: 0 !important;
+		}
+
+		#property-image {
+			height: auto;
+			width: 100%;
+			background-size: cover;
+			background-position: center center;
+			background-attachment: scroll;
+
+			@include media-breakpoint-up(md) {
+				height: 80vh;
+				min-height: 475px;
+			}
+		}
+
+		.property {
+			.property-detail {
+				margin-right: 30px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				display: block;
+				@include media-breakpoint-up(md) {
+					display: inline-block;
+				}
+			}
+
+			.amenities {
+				.fa-check {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	&._villas-365-search {
+		label {
+			font-weight: 400;
+			font-size: 1rem;
+			color: $light;
+			margin-bottom: 0;
+		}
+
+		._villas-365-search-button {
+			background-color: $primary;
+			border-color: $primary;
+			border-radius: 0;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 24px;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			padding-top: 0.65rem;
+			padding-bottom: 0.5rem;
+
+			i {
+				font-size: 18px;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: darken($primary, 10%) !important;
+				border-color: darken($primary, 10%) !important;
+			}
+		}
+
+		input.form-control {
+			border-radius: 0;
+			border-color: $septenary;
+
+			@media (min-width: 992px) {
+				border: none;
+			}
+
+			&::placeholder {
+				color: #b6babe;
+				font-size: 0.875rem;
+			}
+		}
+
+		.input-group {
+			.form-control {
+				border-right: none;
+				border-radius: 0;
+				padding-right: 0;
+				padding-top: 0.5rem;
+				padding-bottom: 0.5rem;
+				line-height: 1.8;
+			}
+			
+			.input-group-append {
+				cursor: default;
+				.input-group-text {
+					color: $tertiary;
+					background-color: #fff;
+					border-radius: 0;
+					border-color: $septenary;
+					padding: .375rem .6rem;
+					font-size: 20px;
+
+					@media (min-width: 992px) {
+						border-top: none;
+						border-bottom: none;
+						border-right-width: 2px;
+
+						&.no-border {
+							border-right: none;
+						}
+					}
+				}
+			}
+		}
+
+		._villas-365-option-checkboxes {
+			text-align: center;
+			
+			._villas-365-option-checkbox {
+				line-height: 1.2rem;
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0;
+				}
+
+				input {
+					position: relative;
+					top: -2px;
+				}
+
+				._villas-365-option-checkbox-custom-container {
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+
+					._villas-365-option-checkbox-custom {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 20px;
+						width: 20px;
+						background-color: $light;
+						margin-right: 10px;
+						border: 1px solid $septenary;
+
+						> i {
+							visibility: hidden;
+							font-size: 13px;
+							color: $tertiary;
+						}
+
+						&.checked {
+							> i {
+								visibility: visible;
+							}
+							font-family: "Font Awesome 5 Free";
+						}
+					}
+					._villas-365-option-checkbox-custom-text {
+						color: $light;
+					}
+				}
+			}
+		}
+		
+		&._villas-365-search-1 {
+			._villas-365-option-checkboxes {
+				text-align: left;
+			}
+		}
+
+		&._villas-365-search-2 {
+			._villas-365-option-checkboxes {
+				text-align: left;
+			}
+		}
+	}
+
+	._villas-365-properties,
+	&._villas-365-properties {
+		._villas-365-property-name {
+			color: $tertiary;
+
+			a {
+				&,
+				&:hover {
+					text-decoration: none;
+					color: $tertiary;
+				}
+			}
+		}
+		
+		._villas-365-property {
+			background-color: #fbfbfb;
+			padding-top: 15px;
+			padding-bottom: 15px;
+
+			&:hover {
+				background-color: $quaternary;
+			}
+
+			._villas-365-property-inner {
+				background-color: #fff;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				padding-left: 15px;
+				padding-right: 15px;
+				height: 100%;
+				width: 100%;
+			}
+
+			._villas-365-property-image {
+			}
+
+			._villas-365-property-name {
+				margin-top: 15px;
+				margin-bottom: 0;
+			}
+
+			._villas-365-property-summary {
+			}
+
+			._villas-365-property-price {
+				margin-top: 15px;
+			}
+		}
+
+		&._villas-365-properties-list,
+		&._villas-365-properties-map {
+			._villas-365-property {
+				padding-left: 15px;
+				padding-right: 15px;
+
+				._villas-365-property-inner {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+
+	._villas-365-navigation {
+		text-transform: uppercase;
+		color: $primary;
+		font-size: 16px;
+
+		@media (min-width: 992px) {
+			font-size: 20px;
+		}
+
+		._villas-365-navigation-link {
+			color: $primary;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.chosen-container {
+		$border-width: 1px;
+		$input-color: $quinary;
+		$input-border-color: $septenary;
+		$input-placeholder-color: #b6babe;
+		$input-bg: $light;
+		$input-border-radius: 0;
+		$input-box-shadow: none;// inset 0 1px 1px rgba($black, .075);
+		$input-font-size: 0.875rem;
+		$input-line-height: 1.8;
+		$input-padding-y: .5rem;
+		$input-padding-x: .75rem;
+		$input-height-border: $border-width * 2;
+		$input-height: calc(#{$input-line-height * 1rem} + #{$input-padding-y * 2} + #{$input-height-border});
+		$input-height-lg: calc(#{$input-line-height * 1rem} + #{$input-padding-y * 2});
+		
+		color: $input-color;
+	
+		.chosen-drop {
+			border-color: $input-border-color;
+			border-width: 0 $border-width $border-width;
+		}
+	
+		.chosen-search {
+			input[type="text"] {
+				color: $input-color;
+			}
+		}
+	
+		&.chosen-container-single {
+			.chosen-single {
+				background-color: $input-bg;
+				background-image: none;
+				border: $border-width solid $input-border-color;
+				border-radius: $input-border-radius;
+				box-shadow: $input-box-shadow;
+				color: $input-color;
+				display: block;
+				font-size: $input-font-size;
+				height: $input-height;
+				line-height: $input-line-height;
+				overflow: hidden;
+				padding: calc(#{$input-padding-y} + 2px) $input-padding-x;
+				position: relative;
+				text-decoration: none;
+				white-space: nowrap;
+
+				@media (min-width: 992px) {
+					border: none;
+					height: $input-height-lg;
+				}
+	
+				abbr {
+					top: 16px;
+				}
+	
+				div b {
+					background-position: 2px calc(((#{$input-height / 2}) - #{$input-padding-y}) - 2px);
+
+					@media (min-width: 992px) {
+						background-position: 2px calc(((#{$input-height-lg / 2}) - #{$input-padding-y}) - 2px);
+					}
+				}
+	
+				input[type="text"].chosen-focus-input {
+					cursor: pointer;
+					opacity: 0;
+					position: absolute;
+					width: 0;
+				}
+			}
+			.chosen-default {
+				color: $input-placeholder-color;
+			}
+			.chosen-drop {
+				border-radius: 0 0 $input-border-radius $input-border-radius;
+				margin-top: -$border-width;
+			}
+		}
+		&.chosen-container-active.chosen-with-drop {
+			.chosen-single {
+				background-color: $input-bg;
+				background-image: none;
+				border: $border-width solid $input-border-color;
+				border-radius: $input-border-radius $input-border-radius 0 0;
+				box-shadow: $input-box-shadow;
+
+				@media (min-width: 992px) {
+					border: none;
+				}
+	
+				div b {
+					background-position: -16px calc(((#{$input-height / 2}) - #{$input-padding-y}) - 2px);
+
+					@media (min-width: 992px) {
+						background-position: -16px calc(((#{$input-height-lg / 2}) - #{$input-padding-y}) - 2px);
+					}
+				}
+			}
+		}
+		&.chosen-container-multi {
+			.chosen-choices {
+				background-color: $input-bg;
+				background-image: none;
+				border: $border-width solid $input-border-color;
+				border-radius: $input-border-radius;
+				box-shadow: $input-box-shadow;
+				color: $input-color;
+				display: block;
+				transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+				width: 100%;
+			}
+	
+			.chosen-choices {
+				li.search-field input[type="text"] {
+					font-size: 14px;
+					height: 30px;
+					line-height: 1.42857;
+					padding: 6px 12px;
+				}
+	
+				li.search-choice {
+					line-height: 18px;
+					background-color: $input-bg;
+					background-image: none;
+					border: 1px solid $input-border-color;
+					color: $body-color;
+	
+					.search-choice-close {
+						top: 7px;
+					}
+				}
+			}
+		}
+		&.chosen-disabled {
+			opacity: 1.0 !important;
+			&.chosen-container-single {
+				.chosen-single {
+					background-color: $input-disabled-bg;
+					cursor: not-allowed;
+				}
+			}
+		}
+	}
+
+	.chosen-select-wide {
+		.chosen-container {
+			&.chosen-container-single {
+				.chosen-drop {
+					@media (min-width: 992px) {
+						width: 200%;
+					}
+				}
+			}
+		}
+	}
+
+	.input-group {
+		> .chosen-container {
+			position: relative;
+			-webkit-box-flex: 1;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			width: 1% !important;
+			margin-bottom: 0;
+
+			.chosen-single {
+				border-right: none;
+			}
+
+			&.chosen-container-active.chosen-with-drop {
+				.chosen-single {
+					border-right: none;
+				}
+			}
+		}
+
+		.input-group-text {
+			&.currency-symbol {
+				line-height: 1;
+				font-size: 21px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.rotate {
+		transition: all ease-in-out 275ms;
+		transform-origin: 50% 50%;
+	
+		&.rotate-0 {	
+			transform: rotate(0deg);
+		}
+	
+		&.rotate-180 {
+			transform: rotate(180deg);
+		}
+	
+		&.rotate-180r {
+			transform: rotate(-180deg);
+		}
+	
+		&.rotate-90 {
+			transform: rotate(90deg);
+		}
+	
+		&.rotate-90r {
+			transform: rotate(-90deg);
+		}
+	}
+
+	.search-categories {
+		font-size: 0.75rem;
+
+		.search-category {
+			font-weight: 700;
+		}
+
+		.search-category-property {
+			padding-left: 20px;
+		}
+	}
+}
+
+//Override the datepicker here as it is attached to the body element.
+.datepicker.dropdown-menu {
+	font-size: 18px;
+}
+
+.datepicker.dropdown-menu th,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.datepicker-inline td {
+	padding: 18px 17px 16px 17px;
+}

@@ -1,0 +1,373 @@
+/*
+This file should have the correct structure so any colour variables prefixed with # (eg. #primary, #secondary)
+can be replaced in PHP with the settings in the plugin and output to the page to override the styles.
+It WILL probably show errors but will compile to a css file (which will also show errors!), but we will be
+replacing the temporary variables with actaul colours.
+
+The current variables (default value is in brackets) that will be replaced are:
+primaryColour (primary)
+secondaryColour (secondary)
+buttonColour (primary)
+iconsColour (primary)
+searchLabelColour (light)
+inputBorderColour (septenary)
+propertyAmenitiesSwitcherColour (primary)
+floaterBackgroundColour (light)
+floaterTextColour (dark)
+floaterHeaderBackgroundColour (primary)
+floaterHeaderTextColour (light)
+featuredColour (primary)
+discountColour (black)
+searchButtonColour (white)
+searchButtonTextColour (black)
+searchButtonHoverColour (black)
+searchButtonHoverTextColour (white)
+*/
+
+//Plugin front-end styles.
+._villas-365-bootstrap {
+	._villas-365-property-button {
+		background-color: #buttonColour;
+		border-color: #buttonColour;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #buttonColour !important;
+			border-color: #buttonColour !important;
+		}
+
+		&._villas-365-property-button-alt {
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: #buttonColour !important;
+			}
+		}
+
+		&._villas-365-property-button-inverted {
+			border-color: #buttonColour;
+			color: #buttonColour;
+
+			&:hover,
+			&:focus,
+			&:active {
+				border-color: #buttonColour !important;
+				color: #buttonColour !important;
+			}
+		}
+	}
+
+	._villas-365-property-outline-button {
+		background-color: transparent;
+		border-color: #buttonColour;
+		color: #buttonColour;
+	
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #buttonColour !important;
+			border-color: #buttonColour !important;
+			color: #fff !important;
+		}
+
+		&._villas-365-property-outline-button-inverted {
+			background-color: #buttonColour;
+			border-color: #buttonColour;
+			color: #fff;
+		
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: transparent !important;
+				border-color: #buttonColour !important;
+				color: #buttonColour !important;
+			}
+		}
+	}
+
+	&._villas-365-property-container {
+		.property {
+			.amenities {
+				.fa-check {
+					color: #iconsColour;
+				}
+			}
+		}
+	}
+
+	&._villas-365-search {
+		label {
+			color: #searchLabelColour;
+		}
+
+		._villas-365-option-checkboxes {
+			._villas-365-option-checkbox {
+				._villas-365-option-checkbox-custom-container {
+					._villas-365-option-checkbox-custom-text {
+						color: #searchLabelColour;
+					}
+				}
+			}
+		}
+	}
+
+	&._villas-365-search,
+	&._villas-365-search._villas-365-search-full {
+		._villas-365-search-button {
+			background-color: #searchButtonColour;
+			border-color: #searchButtonColour;
+			color: #searchButtonTextColour;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: #searchButtonHoverColour;
+				border-color: #searchButtonHoverColour;
+				color: #searchButtonHoverTextColour;
+			}
+		}
+
+		input.form-control {
+			border-color: #inputBorderColour;
+		}
+
+		.input-group {
+			.form-control {
+				border-color: #inputBorderColour;
+			}
+			
+			.input-group-append {
+				.input-group-text {
+					color: #iconsColour;
+					border-color: #inputBorderColour;
+				}
+			}
+		}
+
+		#_villas-365-search-form-fields {
+			.input-group {
+				.input-group-append {
+					.input-group-text {
+						color: #iconsColour;
+					}
+				}
+			}
+		}
+
+		._villas-365-option-checkboxes {
+			._villas-365-option-checkbox {
+				._villas-365-option-checkbox-custom-container {
+					._villas-365-option-checkbox-custom {
+						border-color: #inputBorderColour;
+
+						> i {
+							color: #iconsColour;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	._villas-365-properties,
+	&._villas-365-properties {
+		._villas-365-property {
+			._villas-365-property-image {
+				._villas-365-property-info-label {
+					&._villas-365-property-featured {
+						background-color: #featuredColour;
+					}
+
+					&._villas-365-property-discount {
+						background-color: #discountColour;
+					}
+				}
+			}
+
+			._villas-365-property-inner {
+				._villas-365-property-price {
+					._villas-365-property-price-value {
+						&._villas-365-text-primary {
+							color: #primaryColour;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+._villas-365-property-rooms {
+	._villas-365-property-room {
+		> ._villas-365-property-room-icon {
+			color: #iconsColour;
+		}
+	}
+}
+
+//Plugin property page styles.
+._villas-365-property-header {
+	._villas-365-property-header-inner {
+		background-color: rgba(255,255,255,0.4);
+
+		._villas-365-property-header-inner-background {
+			background-color: rgba(255,255,255,0.95);
+		}
+	}
+}
+
+._villas-365-property-amenities {
+	._villas-365-property-amenity-switcher {
+		._villas-365-property-amenity-switcher-item-selected {
+			color: #propertyAmenitiesSwitcherColour;
+		}
+	}
+
+	._villas-365-property-amenity-switcher-inline {
+		._villas-365-property-amenity-switcher-inline-items {			
+			._villas-365-property-amenity-switcher-inline-item {
+				._villas-365-property-amenity-switcher-inline-item-background {
+					background-color: #propertyAmenitiesSwitcherColour;
+				}
+
+				&.active {
+					color: #propertyAmenitiesSwitcherColour;
+				}
+
+				&:hover {
+					color: #propertyAmenitiesSwitcherColour;
+				}
+			}
+		}
+	}
+
+	._villas-365-property-amenity-specific-room-buttons {
+		._villas-365-property-amenity-room-button {
+			&.active, &:hover {
+				background-color: #propertyAmenitiesSwitcherColour !important;
+			}
+		}
+	}
+}
+
+._villas-365-property-rates-table {
+	._villas-365-property-rates-table-header {
+		._villas-365-property-rates-table-item-inner-item-container {
+			background-color: #propertyRatesHeaderBackgoundColour !important;
+			color: #propertyRatesHeaderTextColour !important;
+		}
+	}
+
+	._villas-365-property-rates-table-item {
+		._villas-365-property-rates-table-item-inner .row {
+			> div:first-child {
+				._villas-365-property-rates-table-item-inner-item-container {
+					background-color: #propertyRatesHeaderBackgoundColour !important;
+					color: #propertyRatesHeaderTextColour !important;
+					
+					@media (min-width: 768px) {
+						background-color: #efefef !important;
+						color: inherit !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+#_villas-365-property-floater {
+	._villas-365-property-floater-content {
+		color: #floaterTextColour !important;
+		background-color: #floaterBackgroundColour !important;
+		border-color: #floaterHeaderBackgroundColour !important;
+
+		._villas-365-property-floater-header {
+			color: #floaterHeaderTextColour !important;
+			background-color: #floaterHeaderBackgroundColour !important;
+		}
+
+		._villas-365-property-floater-body {
+			#_villas-365-property-floater-price-details-button {
+				color: #buttonColour !important;
+			}
+		}
+	}
+
+	#_villas-365-property-floater-discount-row {
+		._villas-365-property-floater-discount {
+			background-color: #discountColour !important;
+		}
+	}
+}
+
+#_villas-365-property-floater-tab-button {
+	background-color: #buttonColour !important;
+	color: #fff !important;
+}
+
+//Plugin property list page styles.
+._villas-365-properties {
+	._villas-365-properties-title-separator {
+		border-bottom-color: #f3f3f3;
+	}
+
+	._villas-365-properties-view-controls {
+		._villas-365-properties-view-control,
+		._villas-365-properties-view-control i {
+			color: #iconsColour;
+
+			&:hover {
+				color: #iconsColour;
+			}
+		}
+	}
+}
+
+//Plugin featured properties.
+._villas-365-bootstrap {
+	&._villas-365-properties {
+		&._villas-365-properties-featured {
+			._villas-365-property {
+				._villas-365-property-button {
+					background-color: #buttonColour;
+					border-color: #buttonColour;
+				}
+
+				._villas-365-property-outline-button {
+					background-color: transparent;
+					border-color: #buttonColour;
+					color: #buttonColour;
+				
+					&:hover,
+					&:focus,
+					&:active {
+						background-color: #buttonColour !important;
+						border-color: #buttonColour !important;
+						color: #fff !important;
+					}
+
+					&._villas-365-property-outline-button-inverted {
+						background-color: #buttonColour;
+						border-color: #buttonColour;
+						color: #fff;
+					
+						&:hover,
+						&:focus,
+						&:active {
+							background-color: transparent !important;
+							border-color: #buttonColour !important;
+							color: #buttonColour !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+._villas-365-saved-properties {
+	> i {
+		color: #iconsColour;
+	}
+}

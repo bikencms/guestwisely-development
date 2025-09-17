@@ -1,0 +1,57 @@
+._villas-365-property-save-button {
+	display: flex;
+	position: relative;
+	cursor: pointer;
+
+	._villas-365-property-save-button-icon {
+		display: block;
+		position: relative;
+
+		&._villas-365-property-save-spinner {
+			display: none;
+		}
+
+		&._villas-365-property-save-inactive {
+			display: block;
+		}
+
+		&._villas-365-property-save-active {
+			display: none;
+		}
+	}
+
+	&.loading {
+		._villas-365-property-save-button-icon {
+			&._villas-365-property-save-spinner {
+				display: block;
+			}
+
+			&._villas-365-property-save-inactive {
+				display: none;
+			}
+		
+			&._villas-365-property-save-active {
+				display: none;
+			}
+		}
+	}
+
+	&.active {
+		._villas-365-property-save-button-icon {
+			&._villas-365-property-save-inactive {
+				display: none;
+			}
+		
+			&._villas-365-property-save-active {
+				display: block;
+			}
+		}
+	}
+
+	._villas-365-property-save-button-text {
+		display: block;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		margin-left: 5px;
+	}
+}

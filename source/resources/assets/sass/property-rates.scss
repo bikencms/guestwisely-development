@@ -1,0 +1,25 @@
+@import "variables";
+
+._villas-365-property-rates-table {
+	._villas-365-property-rates-table-header {
+		color: $tertiary;
+		padding: 5px 10px;
+		font-weight: 700;
+		font-size: 14px;
+
+		@media (min-width: 992px) {
+			font-size: 22px;
+		}
+	}
+
+	._villas-365-property-rates-table-item {
+		._villas-365-property-rates-table-item-inner {
+			padding: 5px 10px;
+			background-color: #efefef;
+			
+			&._villas-365-property-rates-table-item-inner-alt {
+				background-color: transparent;
+			}
+		}
+	}
+}

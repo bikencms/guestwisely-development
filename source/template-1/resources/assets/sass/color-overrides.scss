@@ -1,0 +1,384 @@
+/*
+This file should have the correct structure so any colour variables prefixed with # (eg. #primary, #secondar)
+can be replaced in PHP with the settings in the plugin and output to the page to override the styles.
+It WILL probably show errors but will compile to a css file (which will also show errors!), but we will be
+replacing the temporary variables with actaul colours.
+*/
+
+//Plugin front-end styles.
+._villas-365-bootstrap {
+	._villas-365-title {
+		color: #primary;
+	}
+
+	._villas-365-property-button {
+		background-color: #primary;
+		border-color: #primary;
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: #primary !important;
+			border-color: #primary !important;
+		}
+
+		&._villas-365-property-button-alt {
+			border-color: #light;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: #primary !important;
+				border-color: #light !important;
+			}
+		}
+
+		&._villas-365-property-button-inverted {
+			background-color: #light;
+			border-color: #primary;
+			color: #primary;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: #light !important;
+				border-color: #primary !important;
+				color: #primary !important;
+			}
+		}
+	}
+
+	._villas-365-property-rooms {
+		._villas-365-property-room {
+			> ._villas-365-property-room-icon {
+				color: #primary;
+			}
+		}
+	}
+
+	&._villas-365-property-container {
+		.property {
+			.amenities {
+				.fa-check {
+					color: #primary;
+				}
+			}
+		}
+	}
+
+	&._villas-365-search {
+		label {
+			color: #light;
+		}
+
+		._villas-365-search-button {
+			background-color: #primary;
+			border-color: #primary;
+		}
+
+		input.form-control {
+			border-color: #septenary;
+		}
+
+		.input-group {
+			.form-control {
+				border-color: #septenary;
+			}
+			
+			.input-group-append {
+				.input-group-text {
+					color: #tertiary;
+					border-color: #septenary;
+				}
+			}
+		}
+
+		._villas-365-option-checkboxes {
+			._villas-365-option-checkbox {
+				._villas-365-option-checkbox-custom-container {
+					._villas-365-option-checkbox-custom {
+						border-color: #septenary;
+
+						> i {
+							color: #tertiary;
+						}
+					}
+					._villas-365-option-checkbox-custom-text {
+						color: #light;
+					}
+				}
+			}
+		}
+	}
+
+	._villas-365-properties,
+	&._villas-365-properties {
+		._villas-365-property-name {
+			color: #tertiary;
+
+			a {
+				&,
+				&:hover {
+					color: #tertiary;
+				}
+			}
+		}
+		
+		._villas-365-property {
+			background-color: #fbfbfb;
+
+			&:hover {
+				background-color: #quaternary;
+			}
+
+			._villas-365-property-inner {
+				background-color: #fff;
+			}
+		}
+	}
+
+	._villas-365-navigation {
+		color: #primary;
+
+		._villas-365-navigation-link {
+			color: #primary;
+		}
+	}
+
+	.chosen-container {
+		color: #quinary;
+	
+		.chosen-drop {
+			border-color: #septenary;
+		}
+	
+		.chosen-search {
+			input[type="text"] {
+				color: #quinary;
+			}
+		}
+	
+		&.chosen-container-single {
+			.chosen-single {
+				border-color: #septenary;
+				color: #quinary;
+			}
+			.chosen-default {
+				color: #b6babe;
+			}
+		}
+		&.chosen-container-active.chosen-with-drop {
+			.chosen-single {
+				border-color: #septenary;
+			}
+		}
+		&.chosen-container-multi {
+			.chosen-choices {
+				border-color: #septenary;
+				color: #quinary;
+			}
+	
+			.chosen-choices {
+				li.search-choice {
+					border-color: #septenary;
+					color: #light;
+				}
+			}
+		}
+	}
+}
+
+//Plugin property page styles.
+._villas-365-property-header {
+	._villas-365-property-header-inner {
+		background-color: rgba(255,255,255,0.4);
+
+		._villas-365-property-header-inner-background {
+			background-color: rgba(255,255,255,0.95);
+
+			._villas-365-property-name {
+				color: #primary;
+			}
+		}
+	}
+}
+
+h4._villas-365-property-description-title,
+h4._villas-365-property-information-title {
+	color: #tertiary;
+}
+
+._villas-365-property-information {
+	._villas-365-property-information-controls {
+		._villas-365-property-information-control {
+			border-right-color: #senary;
+
+			color: #septenary;
+			&.active,
+			&:hover {
+				color: #primary;
+			}
+		}
+	}
+
+	._villas-365-property-information-items {
+		background-color: #senary;
+	}
+}
+
+._villas-365-property-amenities {
+	background-color: #secondary;
+
+	._villas-365-property-amenity-switcher-column {
+		h3 {
+			color: #primary;
+		}
+
+		@media (min-width: 992px) {
+			border-right-color: #senary;
+		}
+	}
+
+	h3 {
+		color: #primary;
+	}
+
+	._villas-365-property-amenity-switcher {
+		._villas-365-property-amenity-switcher-items {
+			border-color: #quaternary;
+			background-color: #light;
+		}
+	}
+
+	._villas-365-property-amenity-switcher-inline {
+		._villas-365-property-amenity-switcher-inline-items {			
+			._villas-365-property-amenity-switcher-inline-item {
+				._villas-365-property-amenity-switcher-inline-item-background {
+					background-color: #primary;
+				}
+
+				&.active {
+					color: #primary;
+				}
+
+				&:hover {
+					color: #primary;
+				}
+			}
+		}
+	}
+}
+
+._villas-365-property-rates-table {
+	._villas-365-property-rates-table-header {
+		color: #tertiary;
+	}
+
+	._villas-365-property-rates-table-item {
+		._villas-365-property-rates-table-item-inner {
+			background-color: #quaternary;
+		}
+	}
+}
+
+._villas-365-property-reviews {
+	background-color: #secondary;
+}
+
+._villas-365-property-related-container {
+	background-color: #quaternary;
+
+	._villas-365-property {
+		background-color: #fbfbfb !important;
+
+		._villas-365-property-inner {
+			background-color: #fbfbfb !important;
+		}
+
+		&:hover {
+			background-color: #light !important;
+
+			._villas-365-property-inner {
+				background-color: #light !important;
+			}
+		}
+	}
+}
+
+#_villas-365-property-floater {
+	._villas-365-property-floater-content {
+		background-color: #light;
+
+		._villas-365-property-floater-header {
+			color: #light;
+			background-color: #primary;
+		}
+
+		._villas-365-property-floater-body {
+			.chosen-container {
+				&.chosen-container-single {
+					.chosen-single {
+						border: 1px solid #senary;
+					}
+
+					.chosen-drop {
+						border-color: #senary;
+					}
+				}
+			}
+		}
+	}
+}
+
+//Plugin property list page styles.
+._villas-365-properties {
+	._villas-365-properties-title {
+		color: #primary;
+	}
+
+	._villas-365-properties-title-separator {
+		border-bottom-color: #quaternary;
+	}
+
+	._villas-365-properties-view-controls {
+		._villas-365-properties-view-control {
+			color: #primary;
+
+			&:hover {
+				color: #primary;
+			}
+
+			&._villas-365-properties-view-control-title {
+				color: #tertiary;
+			}
+		}
+	}
+
+	._villas-365-property {
+		._villas-365-property-inner {
+			._villas-365-property-name {
+				a, a:hover {
+					color: #tertiary;
+				}
+			}
+			
+			._villas-365-property-price {
+				color: #tertiary;
+			}
+		}
+	}
+}
+
+//Plugin featured properties.
+._villas-365-bootstrap {
+	&._villas-365-properties {
+		&._villas-365-properties-featured {
+			._villas-365-property {
+				._villas-365-property-button {
+					background-color: #primary;
+					border-color: #primary;
+				}
+			}
+		}
+	}
+}

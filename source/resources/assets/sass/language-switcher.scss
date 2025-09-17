@@ -1,0 +1,26 @@
+@import "variables";
+
+._villas-365-bootstrap {
+	&._villas-365-language-switcher {
+		._villas-365-language-link-container {
+			padding-left: 2px;
+			padding-right: 5px;
+			border-right: 1px solid $quinary;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				border-right: none;
+			}
+
+			&.active {
+				._villas-365-language-link {
+					color: $quinary !important;
+				}
+			}
+		}
+	}
+}

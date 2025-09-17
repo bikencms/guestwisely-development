@@ -1,0 +1,38 @@
+@import "variables";
+
+._villas-365-property-related {
+	._villas-365-property {
+		background-color: #fbfbfb;
+
+		._villas-365-property-inner {
+			background-color: #fbfbfb;
+			padding: 15px 0;
+
+			._villas-365-property-image {
+				margin-bottom: 15px;
+			}
+
+			._villas-365-property-name {
+				margin-bottom: 15px;
+				font-size: 1.25rem;
+				
+				a, a:hover {
+					color: $dark;
+					text-decoration: none;
+				}
+			}
+
+			._villas-365-property-rooms {
+				margin-bottom: 0;
+			}
+		}
+
+		&:hover {
+			background-color: $light;
+
+			._villas-365-property-inner {
+				background-color: $light;
+			}
+		}
+	}
+}

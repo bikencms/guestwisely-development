@@ -1,0 +1,3 @@
+# GuestWisely Plugin License
+
+Copyright (C) 2025 GuestWisely.

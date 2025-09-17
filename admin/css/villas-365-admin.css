@@ -1,0 +1,37 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.color-picker {
+	float: left;
+}
+
+.color-picker-clear-button {
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 2px 9px;
+	margin-top: 1px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+@media screen and (max-width:782px) {
+	.color-picker {
+		width: 91% !important;
+	}
+
+	.color-picker-clear-button {
+		float: right;
+		padding: 10px 15px;
+		margin-top: 0;
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width:540px) {
+	.color-picker {
+		width: 84% !important;
+	}
+}
