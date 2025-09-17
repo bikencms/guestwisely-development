@@ -84,7 +84,7 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 );
 
 $myUpdateChecker->setAuthentication('glpat-2Xqa6wADGA8cRpVZKtCH');
-$myUpdateChecker->setBranch('main');
+$myUpdateChecker->setBranch('master');
 
 /**
  * Begins execution of the plugin.
