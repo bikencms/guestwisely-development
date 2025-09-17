@@ -4,8 +4,8 @@ if (!class_exists('API365')) {
 
 class API365
 {
-	const API_BASE_URL = "https://dev83.365villas.com/vros/api";
-	const API_BASE_URL_PRIVATE = "https://dev83.365villas.com/vros";
+	const API_BASE_URL = "https://secure.365villas.com/vros/api";
+	const API_BASE_URL_PRIVATE = "https://secure.365villas.com/vros";
 	const API_CACHE_GROUP = "365APICacheGroup";
 	const API_TIMEOUT = 30;
 	const API_LOGGING = false;
