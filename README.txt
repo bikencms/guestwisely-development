@@ -13,6 +13,9 @@ Plugin for GuestWisely WordPress Sites.
 A plugin to embed various controls via shortcodes that interact with the GuestWisely API.
 
 == Changelog ==
+= 1.0.1 =
+* Update endpoint production
+
 = 1.0.0 =
 * Introducing a new brand identity as GuestWisely. Welcome!.
 * Supported for new theme: Solstice.
